@@ -1,12 +1,7 @@
-@import "abstracts/variables";
+@import "base/all";
 
-@import "base/animations";
-@import "base/fonts";
-
-@import "layout/nav";
-@import "layout/header";
-@import "layout/about";
-@import "layout/portfolio";
-@import "layout/contact";
-@import "layout/footer";
-
+@import "components/footer";
+@import "components/header";
+@import "components/layout";
+@import "components/navbar";
+@import "components/button.scss"
