@@ -1,7 +1,8 @@
 @import "base/all";
 
-@import "components/footer";
-@import "components/header";
-@import "components/layout";
-@import "components/navbar";
-@import "components/button.scss"
+@import "components/button";
+
+@import "layout/navbar";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/layout";

@@ -1,0 +1,37 @@
+@import "../base/all";
+
+#about {
+    text-align: center;
+    padding: 2em 0;
+    .container {
+        display: flex;
+        width: 50em;
+       
+        
+        margin-right: auto;
+        margin-left: auto;
+
+        .information {
+            text-align: left;
+        }
+    }
+
+    .portrait { 
+        height: 20em;
+        width: 20em;
+        margin-right: 2em;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+#portfolio {
+    text-align: center;
+    background: $neutral-gray;
+    .container {
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+}

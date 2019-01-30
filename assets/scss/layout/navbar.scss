@@ -1,0 +1,50 @@
+@import "../base/all";
+
+.navbar {
+    font-family: $primary-font;
+    background-color: black;
+
+    width: 100%;
+    
+    position: fixed;
+    z-index: +3;
+
+    .container {
+        margin-right: 1em;
+        margin-left: 2em;
+    }
+    
+    .logo {
+        color: white;
+        font-size: $large-size;
+        text-decoration: none;
+    }
+
+    .logo:hover {
+        color: $accent-color;         
+    }
+
+    .nav__item {
+        float: left;
+        
+        a{
+            color: white;
+            font-size: $medium-large-size;
+            text-align: center;
+            text-decoration: none;
+
+            padding: 0.5em 1em;
+            display: block;
+        }
+        
+        a:hover {
+            color: $accent-color;
+            background-color: $neutral-gray;
+        }
+    }
+}
+
+.nav {
+    list-style-type: none;
+    overflow: hidden;
+}

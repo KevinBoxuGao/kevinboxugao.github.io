@@ -3,12 +3,58 @@
   margin: 0;
 }
 
+html,
+body {
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 /* colours */
-.circle-portrait {
+body {
+  font-family: Open Sans, sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+p {
+  font-family: Open Sans, sans-serif;
+  margin-bottom: 1.25em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Lato, sans-serif;
+  margin: 2.75rem 0 1rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+.circle {
   border-radius: 50%;
 }
 
@@ -55,9 +101,9 @@ a.arrow-button span {
   left: 50%;
   width: 36px;
   height: 36px;
-  margin-left: -12px;
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
+  margin-left: -18px;
+  border-left: 5px solid white;
+  border-bottom: 5px solid white;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -webkit-animation: sdb 2s infinite;

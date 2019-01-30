@@ -7,72 +7,73 @@
     <meta name="author" content="Kevin">
 
     <link rel="stylesheet" href="assets/css/main.css">
-   
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <!--Icons-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <div id="nav">
-    <a class="logo left center-vertical">Kevin Gao</a>
-    <ul class="menu right">
-      <li class="menu__item"><a href="#about" class="link">About</a></li>
-      <li class="menu__item"><a href="#portfolio" class="link">Portfolio</a></li>
-      <li class="menu__item"><a href="#contact" class="link">Contact</a></li>
-    </ul>
-  </div>
+  <nav class="navbar">
+    <div class="container">
+      <a class="logo left center-vertical" href="#header">Kevin Gao</a>
+      <ul class="nav right">
+        <li class="nav__item"><a href="#about">About</a></li>
+        <li class="nav__item"><a href="#portfolio">Portfolio</a></li>
+        <li class="nav__item"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section id="header">
-      <div class="background">
-        <div class="container center">
-          <h1>Kevin Gao</h1>
-          <p>Aspiring Programmer</p>  
-        </div>
-        <a class="arrow-button" href="#about"><span></span><span></span><span></span>Scroll</a>
-      </div> 
-    </section>
-
-    <section id="about">
-      <div class="about__container center-horizontal">
-        <div class="about__portrait">
-          <img src="assets/imgs/about.jpg">
-        </div>
-        <div class="about__information">
-          <h3>About Me</h3>
-          <p>I am an aspiring highschool programmer looking towards a career in software engineering. 
-             I am a sociable but awkard attituded person who loves to spend time with people. 
-             I like logic based thinking as well as order and structure.
-             Math and Computer Science are my current main areas of studies.
-          </p>
-        </div>
+  <section id="header">
+    <div class="background">
+      <div class="container center">
+        <h1 class="header__name">Kevin Gao</h1>
+        <h3 class="header__title">Aspiring Programmer</h3>  
       </div>
-    </section>
+      <a class="arrow-button" href="#about"><span></span><span></span><span></span>Scroll</a>
+    </div> 
+  </section>
 
-    <section id="portfolio">
-      <div class="portfolio__container">
-        <p>Coming Soon...</p>
+  <section id="about">
+    <div class="container">
+      <img class="circle portrait"src="assets/imgs/about.jpg">
+      <div class="information">
+        <h2>About Me</h2>
+        <p>I am an aspiring highschool programmer looking towards a career in software engineering. 
+           I am a sociable but awkard attituded person who loves to spend time with people. 
+           I like logic based thinking as well as order and structure.
+           Math and Computer Science are my current main areas of studies.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <div class="footer__container">
-        <div class="footer__navigation">
-          <ul class="menu">
-            <li class="menu__item"><a href="#about" class="link">About</a></li>
-            <li class="menu__item"><a href="#portfolio" class="link">Portfolio</a></li>
-            <li class="menu__item"><a href="#contact" class="link">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__contact">
-          <ul class="menu">
+  <section id="portfolio">
+    <div class="container">
+      <h1>Coming Soon...</h1>
+    </div>
+  </section>
 
-          </ul>
-        </div>
+  <footer>
+    <div class="container">
+      <div class="right">
+		  	<a href="https://www.facebook.com/profile.php?id=100008226697715" target="_blank"><i class="fa fa-facebook"></i></a>
+		  	<a href="https://twitter.com/Kevin_Boxu_Gao" target="_blank"><i class="fa fa-twitter"></i></a>
+		  	<a href="#"><i class="fa fa-linkedin" target="_blank"></i></a>
+		  	<a href="https://github.com/KevinBoxuGao" target="_blank"><i class="fa fa-github"></i></a>
+		  </div>
+		  <div class="left">
+		  	<p class="links">
+          <a href="#header"class="link">Top</a>
+          <a href="#about" class="link">About</a>
+          <a href="#portfolio" class="link">Portfolio</a>
+		  	</p>
+		  	<p>Kevin Gao</p>
       </div>
-    </footer>
-
-    <script src="assets/js/index.js"></script>
+    </div>
+  </footer>
 </body>
 </html>

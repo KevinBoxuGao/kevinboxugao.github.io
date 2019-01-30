@@ -3,13 +3,15 @@
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
   min-height: 100%;
+  min-width: 100%;
   position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* colours */
@@ -108,22 +110,31 @@ h5 {
 }
 
 #header .container {
-  text-align: center;
   font-family: Lato, sans-serif;
   color: white;
-  font-size: 3rem;
+  text-align: center;
   border-style: solid;
   border-width: 0.5em;
   border-color: white;
 }
 
+#header .container .header__name {
+  margin: 0.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#header .container .header__title {
+  margin: 0.5em;
+}
+
 #header a.arrow-button {
   bottom: 2em;
-  left: 50%;
-  z-index: 2;
+  text-decoration: none;
   position: absolute;
   display: inline-block;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  text-decoration: none;
+  z-index: 2;
 }
