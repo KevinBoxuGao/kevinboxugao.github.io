@@ -76,9 +76,6 @@ footer {
 }
 
 @media (max-height: 800px) {
-  footer {
-    position: static;
-  }
   header {
     padding-top: 40px;
   }
