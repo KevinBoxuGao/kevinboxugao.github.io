@@ -3,11 +3,9 @@
   margin: 0;
 }
 
-html,
-body {
-  min-height: 100%;
-  min-width: 100%;
-  position: relative;
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
 html {
@@ -136,7 +134,6 @@ footer .right a {
   margin-left: 3px;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
 @media (max-width: 600px) {
   .footer-distributed .footer-left,
   .footer-distributed .footer-right {
@@ -156,9 +153,6 @@ footer {
 }
 
 @media (max-height: 800px) {
-  footer {
-    position: static;
-  }
   header {
     padding-top: 40px;
   }
