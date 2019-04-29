@@ -1,5 +1,3 @@
-@import "../base/all";
-
 .navbar {
     font-family: $primary-font;
     background-color: black;
@@ -9,19 +7,18 @@
     position: fixed;
     z-index: +3;
 
-    .container {
+    .navbar__container {
         margin-right: 1em;
         margin-left: 2em;
     }
     
-    .logo {
+    .navbar__logo {
         color: white;
         font-size: $large-size;
         text-decoration: none;
-    }
-
-    .logo:hover {
-        color: $accent-color;         
+        &:hover {
+            color: $accent-color;
+        }
     }
 
     .nav__item {
@@ -35,12 +32,13 @@
 
             padding: 0.5em 1em;
             display: block;
+
+            &:hover {
+                color: $accent-color;
+                background-color: $neutral-gray;
+            }
         }
         
-        a:hover {
-            color: $accent-color;
-            background-color: $neutral-gray;
-        }
     }
 }
 

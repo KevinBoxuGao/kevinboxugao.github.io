@@ -1,8 +1,15 @@
-@import "base/all";
+@import "abstracts/variables";
+@import "abstracts/mixins";
 
-@import "components/button";
+
+@import "base/base";
+@import "base/typography";
+
 
 @import "layout/navbar";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/layout";
+
+@import "vendor/normalize";
+@import "vendor/button";
