@@ -1,28 +1,47 @@
-#about {
-    text-align: center;
-    padding: 2em 0;
+//hero
+.hero {
+    margin-top: 66px; //height of navbar
+    display: flex;
     .container {
-        display: flex;
-        width: 50em;
-       
-        
+        width: 50em; 
         margin-right: auto;
         margin-left: auto;
 
-        .information {
-            text-align: left;
+        padding: 5em 0;
+        font-family: $primary-font;
+        color: $secondary-color;
+        text-align: center;
+
+        .subtitle {
+            margin-top: 0;
+        }
+
+        .portrait {
+            margin: 2em 0;
+            @include circle;
+            height: 12em;
+            width: 12em;
+        }
+    }
+}
+
+//about
+.about {
+    background-color: $primary-color;
+    color: $secondary-color;
+    text-align: center;
+    padding: 2em 5em;
+    .container {
+        margin: 3em 0;
+        display: flex;
+        width: 50em; 
+        margin-right: auto;
+        margin-left: auto;
+        h2 {
+            margin-top: 0;
         }
     }
 
-    .portrait { 
-        height: 20em;
-        width: 20em;
-        margin-right: 2em;
-    }
-
-    h2 {
-        margin-top: 0;
-    }
 }
 
 #portfolio {
