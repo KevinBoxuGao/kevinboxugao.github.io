@@ -1,0 +1,65 @@
+.navbar {
+    transition: 0.2s;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: +3;
+
+    .container {
+        margin: 0 10em;
+        padding: 0.5em 0;
+        @include center-vertical;
+        .navbar__brand{
+            margin-left: 20px;
+            float: left;
+            display: inline;
+            .brand__item {
+                color: $primary-color;
+                font-size: 40px;
+                text-decoration: none;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .navbar__menu {
+            float: right;
+            display: inline;
+            list-style-type: none;
+            overflow: hidden;
+            .menu__item {
+                float: left;
+                display: inline;
+                overflow: hidden;
+                a{
+                    color: $secondary-color;
+                    font-size: 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    padding: 0.5em 1em;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.scrolled {
+    background-color: $secondary-color;
+    .container {
+        .navbar__menu {
+            .menu__item {
+                a {
+                    color: white;
+                    &:hover {
+                    }
+                }
+            }
+        }
+    }
+}

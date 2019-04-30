@@ -1,15 +1,12 @@
+@import "vendor/normalize";
+
 @import "abstracts/variables";
 @import "abstracts/mixins";
-
 
 @import "base/base";
 @import "base/typography";
 
-
 @import "layout/navbar";
-@import "layout/header";
+@import "layout/hero";
 @import "layout/footer";
 @import "layout/layout";
-
-@import "vendor/normalize";
-@import "vendor/button";
