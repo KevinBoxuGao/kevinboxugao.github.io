@@ -19,12 +19,13 @@
 
 <body>
 
-  <nav class="navbar">
-    <div class="container">
-      <div class="navbar__brand">
-        <a class="brand__item" href="#header">Kevin Gao</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="brand">
+        <a class="brand__name" href="#header">Kevin Gao</a>
       </div>
     
+
       <div class="navbar__menu">
         <ul class="menu__links">
           <li class="menu__item"><a href="#about">About</a></li>
@@ -40,23 +41,21 @@
   </nav>
 
   <section class="hero">
-    <div class="container">
-      <h1 class="title">Kevin Gao</h1>
-      <h4 class="subtitle">Front-End Web Developer, Aspiring Programmer</h4>  
-      <img class="portrait"src="styles/imgs/portrait.jpg">
+    <div class="hero__inner">
+      <h1 class="hero__title">Kevin Gao</h1>
+      <h4 class="hero__subtitle">Front-End Web Developer, Aspiring Programmer</h4>  
+      <img class="hero__portrait"src="styles/imgs/about.jpg">
     </div>
   </section>
 
   <section class="about">
-    <div class="container">
-      <div class="information">
-        <h2>About Me</h2>
-        <p>I am an aspiring highschool programmer looking towards a career in software engineering. 
-           I am a sociable but awkard attituded person who loves to spend time with people. 
-           I like logic based thinking as well as order and structure.
-           Math and Computer Science are my current main areas of studies.
-        </p>
-      </div>
+    <div class="about__inner">
+      <h2 class="about__title">About Me</h2>
+      <p class="about__paragraph">I am an aspiring highschool programmer looking towards a career in software engineering. 
+        I am a sociable person who loves to spend time with people. 
+        I like logic based thinking as well as order and structure.
+        Math and Computer Science are my current main areas of studies.
+      </p>
     </div>
   </section>
 
@@ -64,41 +63,30 @@
   </section>
 
   <section class="portfolio">
-    <div class="container">
-      <div class="portfolio__item">
-       <img src="styles/imgs/Orderly-lifestyle.png" class="portfolio__image">
+    <div class="portfolio__inner">
+      <img src="styles/imgs/Orderly-lifestyle.png" class="portfolio__image">
        <div class="additional-information">
          <h3>Orderly lifestyle</h3>
          <p>A web app created using html, css, jquery, flask, and google app engine datastore to track basic tasks</p>
        </div>
-      </div>
-
-      <div class="portfolio__item">
-       <img src="styles/imgs/Orderly-lifestyle.png" class="portfolio__image">
-       <div class="additional-information">
-         <h3>Orderly lifestyle</h3>
-         <p>A web app created using html, css, jquery, flask, and google app engine datastore to track basic tasks</p>
-       </div>
-      </div> 
     </div>
   </section>
 
   <footer class="footer">
-    <div class="footer__container">
-      <div class="footer__right">
+    <div class="footer__inner">
+      <div class="footer__contact">
 		  	<a href="https://www.facebook.com/profile.php?id=100008226697715" target="_blank"><i class="fab fa-facebook"></i></a>
 		  	<a href="https://twitter.com/Kevin_Boxu_Gao" target="_blank"><i class="fab fa-twitter"></i></a>
 		  	<a href="#"><i class="fab fa-linkedin" target="_blank"></i></a>
 		  	<a href="https://github.com/KevinBoxuGao" target="_blank"><i class="fab fa-github"></i></a>
 		  </div>
-		  <div class="footer__left">
-		  	<p class="footer__links">
-          <a href="#header"class="link">Top</a>
-          <a href="#about" class="link">About</a>
-          <a href="#portfolio" class="link">Portfolio</a>
-          <a href="#contact" class="link">Contact</a>
-		  	</p>
-		  	<p class="footer__logo">Kevin Gao</p>
+		  <p class="footer__links">
+        <a href="#header"class="menu__link">Top</a>
+        <a href="#about" class="menu__link">About</a>
+        <a href="#portfolio" class="menu__link">Portfolio</a>
+        <a href="#contact" class="menu__link">Contact</a>
+		  </p>
+		  <p class="footer__logo">Kevin Gao</p>
       </div>
     </div>
   </footer>
