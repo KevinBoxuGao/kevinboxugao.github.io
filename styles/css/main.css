@@ -443,6 +443,11 @@ h5 {
 .navbar .container .navbar__menu .menu__item a:hover {
   color: #0066ff;
 }
+.navbar .container .navbar__menu .navbar__button {
+  color: #293347;
+  font-size: 32px;
+  display: none;
+}
 
 .scrolled {
   background-color: #293347;
@@ -451,6 +456,33 @@ h5 {
   color: white;
 }
 
+@media screen and (max-width: 1024px) {
+  .menu__links {
+    display: none;
+  }
+
+  .navbar__button {
+    display: block;
+    float: right;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .navbar__menu.responsive {
+    position: relative;
+  }
+  .navbar__menu.responsive .navbar__button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar__menu.responsive .menu__links {
+    float: none;
+    display: block;
+  }
+  .navbar__menu.responsive .menu__links .menu__item {
+    text-align: left;
+  }
+}
 footer {
   background-color: #293347;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -529,10 +561,13 @@ footer {
   width: 50em;
   margin-right: auto;
   margin-left: auto;
-  padding: 5em 0;
+  padding: 20vh 0;
   font-family: Lato, sans-serif;
   color: #293347;
   text-align: center;
+}
+.hero .container .title {
+  margin-top: 0;
 }
 .hero .container .subtitle {
   margin-top: 0;
@@ -561,10 +596,37 @@ footer {
   margin-top: 0;
 }
 
-#portfolio {
-  text-align: center;
+.portfolio .container {
+  flex-wrap: wrap;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
 }
-#portfolio .container {
-  padding-top: 10em;
-  padding-bottom: 10em;
+.portfolio .container .portfolio__item {
+  width: 30em;
+  height: 30em;
+}
+.portfolio .container .portfolio__item .portfolio__image {
+  margin: 3em;
+  opacity: 1;
+  display: block;
+  width: 30em;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.portfolio .container .portfolio__item .portfolio__image:hover {
+  opacity: 0.3;
+}
+.portfolio .container .portfolio__item .additional-information {
+  transition: .5s ease;
+  opacity: 0;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.portfolio .container .portfolio__item .additional-information:hover {
+  opacity: 1;
 }

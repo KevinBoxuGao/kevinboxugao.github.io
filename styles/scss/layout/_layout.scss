@@ -7,10 +7,14 @@
         margin-right: auto;
         margin-left: auto;
 
-        padding: 5em 0;
+        padding: 20vh 0;
         font-family: $primary-font;
         color: $secondary-color;
         text-align: center;
+
+        .title {
+            margin-top: 0;
+        }
 
         .subtitle {
             margin-top: 0;
@@ -44,10 +48,42 @@
 
 }
 
-#portfolio {
-    text-align: center;
+.portfolio {
     .container {
-        padding-top: 10em;
-        padding-bottom: 10em;
+        flex-wrap: wrap;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        
+
+        .portfolio__item {
+            width: 30em;
+            height: 30em;
+            .portfolio__image{
+                margin: 3em;
+                opacity: 1;
+                display: block;
+                width: 30em;
+                height: auto;
+                transition: .5s ease;
+                backface-visibility: hidden;
+                &:hover {
+                    opacity: 0.3;    
+                }
+            }
+            .additional-information {
+                transition: .5s ease;
+                opacity: 0;
+
+                text-align: center;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                &:hover {
+                    opacity: 1;    
+                }
+            }
+        }
     }
 }

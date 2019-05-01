@@ -43,12 +43,18 @@
                         color: $primary-color;
                     }
                 }
-
+            }
+            .navbar__button {
+                color: $secondary-color;
+                font-size: 32px;
+                display: none;
             }
         }
     }
 }
 
+
+//media queries
 .scrolled {
     background-color: $secondary-color;
     .container {
@@ -63,3 +69,33 @@
         }
     }
 }
+
+
+@media screen and (max-width: 1024px) {
+    .menu__links {
+        display: none;
+    }
+    .navbar__button {
+        display: block;
+        float: right;
+    }
+}
+  
+@media screen and (max-width: 1024px) {
+    .navbar__menu.responsive {
+        position: relative;
+    
+        .navbar__button {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .menu__links {
+            float: none;
+            display: block;
+            .menu__item {
+                text-align: left;
+            }
+        }
+    }
+} 
