@@ -1,101 +1,97 @@
-.navbar {
-    transition: 0.2s;
+.nav {
+    background: white;
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: +3;
 
-    .container {
-        margin: 0 10em;
-        padding: 0.5em 0;
-        @include center-vertical;
-        .navbar__brand{
-            margin-left: 20px;
-            float: left;
-            display: inline;
-            .brand__item {
-                color: $primary-color;
-                font-size: 40px;
-                text-decoration: none;
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }
+    transition: 0.2s;
+    z-index: 2;
+}
 
-        .navbar__menu {
-            float: right;
-            display: inline;
-            list-style-type: none;
-            overflow: hidden;
-            .menu__item {
-                float: left;
-                display: inline;
-                overflow: hidden;
-                a{
-                    color: $secondary-color;
-                    font-size: 20px;
-                    text-align: center;
-                    text-decoration: none;
-                    padding: 0.5em 1em;
+.nav__inner {
+        
+}
 
-                    &:hover {
-                        color: $primary-color;
-                    }
-                }
-            }
-            .navbar__button {
-                color: $secondary-color;
-                font-size: 32px;
-                display: none;
-            }
+.brand {
+    display: inline-block;
+    @include element('name') {
+        color: $primary-color;
+        font-size: 40px;
+        text-decoration: none;
+        &:hover {
+            cursor: pointer;
         }
     }
 }
 
+.nav__button {
+    color: $secondary-color;
+    font-size: 32px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
 
-//media queries
-.scrolled {
-    background-color: $secondary-color;
-    .container {
-        .navbar__menu {
-            .menu__item {
-                a {
-                    color: white;
-                    &:hover {
-                    }
-                }
-            }
+.menu {
+    display: inline-block;
+    float: right;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    .menu__link {
+        color: $secondary-color;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        &:hover {
+            color: $primary-color;
         }
-    }
+    }  
 }
-
-
-@media screen and (max-width: 1024px) {
-    .menu__links {
-        display: none;
-    }
-    .navbar__button {
-        display: block;
-        float: right;
-    }
-}
-  
-@media screen and (max-width: 1024px) {
-    .navbar__menu.responsive {
-        position: relative;
     
-        .navbar__button {
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-        .menu__links {
-            float: none;
-            display: block;
-            .menu__item {
-                text-align: left;
-            }
+//on scroll
+.nav--scrolled {
+    background-color: $secondary-color;
+    .nav__inner {
+        .menu {
+            .menu__link {
+                color: white; 
+            } 
         }
     }
-} 
+}
+
+@media screen and (max-width: 700px) {
+    .nav {
+        .nav__inner {
+            .nav__button {
+                display: inline-block;
+                float: right;
+            }
+            .menu {
+                width: 0;
+                height: 100%;
+                left: 0;
+                top: 1;
+                z-index: 3;
+                position: fixed;
+                background-color: $secondary-color;
+                transition: 0.5s;
+                overflow-x: hidden;
+                a {
+                    display: block;
+                    z-index: 4;
+
+                    &:hover {
+                        color: $primary-color
+                    }
+                }
+            }   
+        }
+    }
+}
+

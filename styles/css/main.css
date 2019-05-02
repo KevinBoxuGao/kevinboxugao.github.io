@@ -370,7 +370,7 @@ p {
 
 h1, h2, h3, h4, h5 {
   font-family: Lato, sans-serif;
-  margin: 2.75rem 0 1rem;
+  margin: 0 0 1rem;
   font-weight: 200;
   line-height: 1.15;
 }
@@ -395,95 +395,88 @@ h5 {
   font-size: 25px;
 }
 
-.navbar {
-  transition: 0.2s;
+.nav {
+  background: white;
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: +3;
+  transition: 0.2s;
+  z-index: 2;
 }
-.navbar .container {
-  margin: 0 10em;
-  padding: 0.5em 0;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+
+.brand {
+  display: inline-block;
 }
-.navbar .container .navbar__brand {
-  margin-left: 20px;
-  float: left;
-  display: inline;
-}
-.navbar .container .navbar__brand .brand__item {
+.brand__name {
   color: #0066ff;
   font-size: 40px;
   text-decoration: none;
 }
-.navbar .container .navbar__brand .brand__item:hover {
+.brand__name:hover {
   cursor: pointer;
 }
-.navbar .container .navbar__menu {
-  float: right;
-  display: inline;
-  list-style-type: none;
-  overflow: hidden;
-}
-.navbar .container .navbar__menu .menu__item {
-  float: left;
-  display: inline;
-  overflow: hidden;
-}
-.navbar .container .navbar__menu .menu__item a {
-  color: #293347;
-  font-size: 20px;
-  text-align: center;
-  text-decoration: none;
-  padding: 0.5em 1em;
-}
-.navbar .container .navbar__menu .menu__item a:hover {
-  color: #0066ff;
-}
-.navbar .container .navbar__menu .navbar__button {
+
+.nav__button {
   color: #293347;
   font-size: 32px;
   display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
 }
 
-.scrolled {
+.menu {
+  display: inline-block;
+  float: right;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+.menu .menu__link {
+  color: #293347;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+.menu .menu__link:hover {
+  color: #0066ff;
+}
+
+.nav--scrolled {
   background-color: #293347;
 }
-.scrolled .container .navbar__menu .menu__item a {
+.nav--scrolled .nav__inner .menu .menu__link {
   color: white;
 }
 
-@media screen and (max-width: 1024px) {
-  .menu__links {
-    display: none;
-  }
-
-  .navbar__button {
-    display: block;
+@media screen and (max-width: 700px) {
+  .nav .nav__inner .nav__button {
+    display: inline-block;
     float: right;
   }
-}
-@media screen and (max-width: 1024px) {
-  .navbar__menu.responsive {
-    position: relative;
+  .nav .nav__inner .menu {
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 1;
+    z-index: 3;
+    position: fixed;
+    background-color: #293347;
+    transition: 0.5s;
+    overflow-x: hidden;
   }
-  .navbar__menu.responsive .navbar__button {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navbar__menu.responsive .menu__links {
-    float: none;
+  .nav .nav__inner .menu a {
     display: block;
+    z-index: 4;
   }
-  .navbar__menu.responsive .menu__links .menu__item {
-    text-align: left;
+  .nav .nav__inner .menu a:hover {
+    color: #0066ff;
   }
 }
-footer {
+.footer {
   background-color: #293347;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -493,30 +486,12 @@ footer {
   padding: 45px 50px;
   /* Footer links */
 }
-footer .footer__left p {
-  color: #8f9296;
-  font-size: 14px;
-  margin: 0;
-}
-footer p.footer__links {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffffff;
-  margin: 0 0 10px;
-  padding: 0;
-}
-footer a {
-  display: inline-block;
-  line-height: 1.8;
-  text-decoration: none;
-  color: inherit;
-}
-footer .footer__right {
+.footer .footer__contact {
   float: right;
   margin-top: 6px;
   max-width: 180px;
 }
-footer .footer__right a {
+.footer .footer__contact a {
   display: inline-block;
   width: 35px;
   height: 35px;
@@ -527,6 +502,24 @@ footer .footer__right a {
   text-align: center;
   line-height: 35px;
   margin-left: 3px;
+}
+.footer .footer__links {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+.footer p.footer__links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+}
+.footer p.footer__links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
 }
 
 @media (max-width: 600px) {

@@ -1,18 +1,17 @@
-function openNav() {
-    var nav = $(".navbar__menu");
-    console.log(nav.hasClass('responsive'));
-    if (nav.hasClass('responsive')) {
-        nav.removeClass('responsive');
+function toggleNav() {
+    if ($(".menu").width() > 0) {
+        $(".menu").width(0);
+    } else {
+        $(".menu").width(200);
     }
-    else {
-        nav.addClass("responsive");
-    }
+
+
 }
 
 $(function(){
     //change navbar on scroll
     $(document).scroll(function () {
-        var $nav = $(".navbar");
-        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        var $nav = $(".nav");
+        $nav.toggleClass('nav--scrolled', $(this).scrollTop() > $nav.height());
     });
 });
