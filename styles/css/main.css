@@ -406,6 +406,7 @@ h5 {
 
 .brand {
   display: inline-block;
+  margin-left: 1em;
 }
 .brand__name {
   color: #0066ff;
@@ -416,64 +417,76 @@ h5 {
   cursor: pointer;
 }
 
-.nav__button {
-  color: #293347;
-  font-size: 32px;
-  display: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-}
-
 .menu {
   display: inline-block;
-  float: right;
   overflow: hidden;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
 }
-.menu .menu__link {
+.menu__button {
+  font-size: 32px;
+  display: none;
+  color: #293347;
+}
+.menu .menu__items .menu__link {
   color: #293347;
   font-size: 20px;
   text-decoration: none;
   padding: 0.5em 1em;
 }
-.menu .menu__link:hover {
+.menu .menu__items .menu__link:hover {
+  color: #0066ff;
+}
+
+.sidebar {
+  display: none;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  position: fixed;
+  background-color: #293347;
+  transition: 0.5s;
+  overflow-x: hidden;
+}
+.sidebar a {
+  display: block;
+  z-index: 4;
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+.sidebar a:hover {
   color: #0066ff;
 }
 
 .nav--scrolled {
   background-color: #293347;
 }
-.nav--scrolled .nav__inner .menu .menu__link {
+.nav--scrolled .nav__inner .menu .menu__button {
   color: white;
+}
+.nav--scrolled .nav__inner .menu .menu__items .menu__link {
+  color: white;
+}
+.nav--scrolled .nav__inner .menu .menu__items .menu__link:hover {
+  color: #0066ff;
 }
 
 @media screen and (max-width: 700px) {
-  .nav .nav__inner .nav__button {
+  .nav .nav__inner .menu .menu__button {
     display: inline-block;
     float: right;
+    margin-right: 0.5em;
   }
-  .nav .nav__inner .menu {
-    width: 0;
-    height: 100%;
-    left: 0;
-    top: 1;
-    z-index: 3;
-    position: fixed;
-    background-color: #293347;
-    transition: 0.5s;
-    overflow-x: hidden;
+  .nav .nav__inner .menu .menu__items {
+    display: none;
   }
-  .nav .nav__inner .menu a {
+  .nav .nav__inner .sidebar {
     display: block;
-    z-index: 4;
-  }
-  .nav .nav__inner .menu a:hover {
-    color: #0066ff;
   }
 }
 .footer {

@@ -1,11 +1,9 @@
 function toggleNav() {
-    if ($(".menu").width() > 0) {
-        $(".menu").width(0);
+    if ($(".sidebar").width() > 0) {
+        $(".sidebar").width(0);
     } else {
-        $(".menu").width(200);
+        $(".sidebar").width(150);
     }
-
-
 }
 
 $(function(){
