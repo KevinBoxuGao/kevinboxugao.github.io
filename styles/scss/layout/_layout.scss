@@ -1,27 +1,19 @@
 //hero
 .hero {
-    margin-top: 66px; //height of navbar
+    min-height: 100vh;
     display: flex;
-    .container {
-        width: 50em; 
-        margin-right: auto;
-        margin-left: auto;
-
-        padding: 20vh 0;
+    @include element('inner') {
+        max-width: 50em; 
         font-family: $primary-font;
         color: $secondary-color;
         text-align: center;
+        @include center;
 
-        .title {
-            margin-top: 0;
-        }
+        margin-top: 1em;
 
-        .subtitle {
-            margin-top: 0;
-        }
 
-        .portrait {
-            margin: 2em 0;
+        .hero__portrait {
+            margin-top: 2em;
             @include circle;
             height: 12em;
             width: 12em;
@@ -29,57 +21,101 @@
     }
 }
 
+@media screen and (max-width: 720px) {
+    .hero__title {
+        font-size: 50px;
+    }
+    .hero__subtitle {
+        font-size: 18px;
+    }    
+}
+
 //about
 .about {
     background-color: $primary-color;
     color: $secondary-color;
     text-align: center;
-    padding: 2em 5em;
-    .container {
-        margin: 3em 0;
-        display: flex;
-        width: 50em; 
+    @include element('inner') {
+        max-width: 50em; 
         margin-right: auto;
         margin-left: auto;
+        padding: 2em;
+        border: 
+
         h2 {
             margin-top: 0;
         }
     }
+}
 
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .portfolio {
-    .container {
+    h2 {
+        text-align: center;
+        margin: 1em;
+    }
+
+    .portfolio__inner {
+        max-width: 60em;
         flex-wrap: wrap;
         display: flex;
         margin-right: auto;
         margin-left: auto;
+        justify-content: space-around;
         
-
         .portfolio__item {
-            width: 30em;
-            height: 30em;
+            box-sizing: border-box;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            height: 25em;
+            width: 25em;
+            object-fit: contain;
+            margin-bottom: 4rem;
             .portfolio__image{
-                margin: 3em;
-                opacity: 1;
-                display: block;
-                width: 30em;
-                height: auto;
-                transition: .5s ease;
-                backface-visibility: hidden;
+                max-width: 30em;
                 &:hover {
                     opacity: 0.3;    
                 }
             }
-            .additional-information {
-                transition: .5s ease;
+            .item__information {
+                display: block;
                 opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                color: #fff;
+                padding: 15px;
+                -moz-transition: all 0.4s ease-in-out 0s;
+                -webkit-transition: all 0.4s ease-in-out 0s;
+                -ms-transition: all 0.4s ease-in-out 0s;
+                transition: all 0.4s ease-in-out 0s;
 
-                text-align: center;
-                position: relative;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                .item__text {
+                    text-align: center;
+                    display: inline-block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -moz-transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+     
+
                 &:hover {
                     opacity: 1;    
                 }

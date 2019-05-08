@@ -1,9 +1,12 @@
-html {
+html { 
     scroll-behavior: smooth;
-
+    overflow-x:hidden;
 }
 
-
+body {
+    padding-top: 66px; //height of navbar
+    overflow-x:hidden;
+}
 
 ul {
     list-style: none;
