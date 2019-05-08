@@ -652,6 +652,10 @@ footer {
 @media screen and (max-width: 780px) {
   .skills__section {
     flex-basis: 100%;
+    text-align: center;
+  }
+  .skills__section ul {
+    list-style-type: none;
   }
 
   .programming-languages, .computer-software {
@@ -659,9 +663,12 @@ footer {
     border-bottom: 1px solid grey;
   }
 }
+.portfolio {
+  background-color: #fafafa;
+}
 .portfolio h2 {
   text-align: center;
-  margin: 1em;
+  padding: 1em;
 }
 .portfolio .portfolio__inner {
   max-width: 60em;

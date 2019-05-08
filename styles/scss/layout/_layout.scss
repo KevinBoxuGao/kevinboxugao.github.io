@@ -92,6 +92,10 @@
 @media screen and (max-width: 780px) {
     .skills__section {
         flex-basis: 100%;
+        text-align: center;
+        ul {
+            list-style-type: none;
+        }
     }
     .programming-languages, .computer-software {
         border-right: none;
@@ -100,9 +104,10 @@
 }
 
 .portfolio {
+    background-color: $light-grey;
     h2 {
         text-align: center;
-        margin: 1em;
+        padding: 1em;
     }
 
     .portfolio__inner {
