@@ -613,7 +613,7 @@ footer {
 }
 
 .skills {
-  max-width: 50em;
+  max-width: 60em;
   margin-left: auto;
   margin-right: auto;
   border-style: solid;
@@ -634,18 +634,29 @@ footer {
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 4em;
+  justify-content: space-evenly;
 }
 .skills .skills__inner .skills__section ul {
   list-style-type: circle;
 }
 
 .skills__section {
-  flex-basis: 33%;
+  padding: 1em;
+  flex-basis: 29%;
+}
+
+.programming-languages, .computer-software {
+  border-right: 1px solid grey;
 }
 
 @media screen and (max-width: 780px) {
   .skills__section {
     flex-basis: 100%;
+  }
+
+  .programming-languages, .computer-software {
+    border-right: none;
+    border-bottom: 1px solid grey;
   }
 }
 .portfolio h2 {
