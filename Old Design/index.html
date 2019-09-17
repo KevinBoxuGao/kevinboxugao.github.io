@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kevin's Website</title>
+    <meta name="description" content="Kevin's personal website">
+    <meta name="author" content="Kevin">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="styles/css/main.css">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <!--Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="styles/js/main.js"></script>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="brand nav__brand">
+        <a class="brand__name" href="#hero">Kevin Gao</a>
+      </div>
+      <div class="menu nav__menu">
+        <a href="javascript:void(0);" class="button menu__button" onclick="toggleNav()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <div class="menu__items">
+          <a class="menu__link" href="#about">About</a>
+          <a class="menu__link" href="#about">Skills</a>
+          <a class="menu__link" href="#portfolio">Portfolio</a>
+          <a class="menu__link" href="assets/KevinGaoResume.pdf">Resume</a>
+          <a class="menu__link" href="#footer">Contact</a>
+        </div>
+      </div>   
+      <div class="sidebar">
+        <a class="sidebar__link" href="#about">About</a>
+        <a class="sidebar__link" href="#portfolio">Skills</a>
+        <a class="sidebar__link" href="#portfolio">Portfolio</a>
+        <a class="sidebar__link" href="assets/KevinGaoResume.pdf">Resume</a>
+        <a class="sidebar__link" href="#footer">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero" id="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">Kevin Gao</h1>
+      <h4 class="hero__subtitle">Front-End Web Developer, Aspiring Programmer</h4>  
+      <img class="hero__portrait"src="styles/imgs/portrait.jpg">
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about__inner">
+      <h2 class="about__title">About Me</h2>
+      <p class="about__paragraph">I am an aspiring highschool programmer looking towards a career in software engineering. 
+        I am a sociable person who loves to spend time with people. 
+        I like logic based thinking as well as order and structure.
+        Math and Computer Science are my current main areas of studies.
+      </p>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h3 class="title">Skills</h3>
+    <div class="skills__inner">
+      <div class="programming-languages skills__section">
+        <h4 class="skill__title">Programming Languages and Frameworks</h4>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SASS</li>
+          <li>Javascript</li>
+          <li>JQuery</li>
+          <li>Python</li>
+          <li>C++</li>
+          <li>Google App Engine</li>
+          <li>Firebase</li>
+        </ul>
+      </div>
+      <div class="computer-software skills__section">
+        <h4 class="skill__title">Computer Software</h4>
+        <ul>
+          <li>Git</li>
+          <li>Command Prompt</li>
+          <li>Google Drive</li>
+          <li>Microsoft Office</li>
+        </ul>
+      </div>
+      <div class="soft-skills skills__section">
+        <h4 class="skill__title">Soft Skills</h4>
+        <ul>    
+          <li>Communication</li>
+          <li>Public Speaking</li>
+          <li>Organization</li>
+          <li>Time Management</li>
+          <li>Critical Thinking</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio__inner">
+      <div class="portfolio__item"> 
+        <img src="styles/imgs/Orderly-lifestyle.png" class="portfolio__image">
+        <div class="item__information">
+          <div class="item__text">
+            <h4 class="item__title">Orderly lifestyle</h4>
+            <p>A web app created using html, css, jquery, flask, and google app engine datastore to track basic tasks.</p>
+          </div>
+        </div>
+      </div> 
+      <div class="portfolio__item"> 
+          <img src="styles/imgs/Offline Assist.PNG" class="portfolio__image">
+          <div class="item__information">
+            <div class="item__text">
+              <h4 class="item__title">Offline Assist</h4>
+              <p>An offline assistance platform for JAMHacks 3 that allows access to google services through the use of SMS. Used Twilio to communicate between a python flask server and a client's SMS</p>
+            </div>
+          </div>
+        </div> 
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__contact">
+		  	<a href="https://www.facebook.com/profile.php?id=100008226697715" target="_blank"><i class="fab fa-facebook"></i></a>
+		  	<a href="https://twitter.com/Kevin_Boxu_Gao" target="_blank"><i class="fab fa-twitter"></i></a>
+		  	<a href="#"><i class="fab fa-linkedin" target="_blank"></i></a>
+		  	<a href="https://github.com/KevinBoxuGao" target="_blank"><i class="fab fa-github"></i></a>
+		  </div>
+		  <p class="footer__links">
+        <a href="#hero"class="menu__link">Top</a>
+        <a href="#about" class="menu__link">About</a>
+        <a href="#skills" class="menu__link">Skills</a>
+        <a href="#portfolio" class="menu__link">Portfolio</a>
+        <a href="assets/KevinGaoResume.pdf" class="menu__link">Resume</a>
+		  </p>
+		  <p class="footer__logo">Kevin Gao</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
