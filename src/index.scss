@@ -1,4 +1,40 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./styling/normalize.css";
+
+h6,h4,h3,h2,h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+* {
+	outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  border-style: none;
+}
+
+button:active {
+  outline: none;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
 
 /*navbar */
 .navbar {
@@ -34,6 +70,11 @@
   background: none;
 }
 
+.scroll-down-button {
+  color: white;
+}
+
 /*portfolio */
+
 
   
