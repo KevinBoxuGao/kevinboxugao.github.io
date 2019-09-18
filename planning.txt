@@ -1,0 +1,9 @@
+Colours:
+Background:  #0052d4 → #4364f7 → #6fb1fc 
+
+Dominant Color:
+Highlight Color:
+
+Fonts:
+Primary(titles): Source Sans Pro
+Secondary(text): Open Sans

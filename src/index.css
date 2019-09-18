@@ -1,0 +1,37 @@
+/*navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+.navbar {
+  background: none;
+}
+
+.nav-link, .navbar-brand { 
+  color: white;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.nav-link {
+  padding-right: .5rem !important;
+  padding-left: .5rem !important;
+}
+
+/*hero */
+#hero {
+  min-height: 100vh;
+  color: white;
+  background: linear-gradient(0.08deg, #0052D4 -0.09%, #4364F7 15.07%, #69A7FB 88.75%, #6FB1FC 99.91%);
+}
+
+.jumbotron {
+  background: none;
+}
+
+/*portfolio */
+
+  

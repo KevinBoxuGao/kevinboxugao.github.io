@@ -1,5 +1,0 @@
-Colours:
-Background: #005c97 → #363795 
-
-Fonts:
-
