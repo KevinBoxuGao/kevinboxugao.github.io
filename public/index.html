@@ -20,22 +20,23 @@
         </span>
       </button>
       
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
+      <div class="nav__container ml-auto collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
       </div>
+
     </nav>
   </div>
 
@@ -54,35 +55,62 @@
   </div>
 
   <div id="portfolio">
-    <div>
-      <h2>Portfolio</h2>
-    </div>
-    <div class="" id="portfolio__nav">
-      <div class="filter">Featured</div>
-      <div class="filter">All</div>
-      <div class="filter">Hackathons</div>
-    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm text-center ">
+          <div>
+            <h2>Portfolio</h2>
+          </div>
+          <div class="btn-group" role="group" aria-label="Basic example" id="portfolio__nav">
+            <button type="button" class="btn btn-secondary">All</button>
+            <button type="button" class="btn btn-secondary">Featured</button>
+            <button type="button" class="btn btn-secondary">Hackathons</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row" id="portfolio__content">
+        <div class="project col-md-4 col-sm-6 col-xs-12">
+          <a href="#">
+            <figure class="portfolio__item">
+              <img src="../assets/orderly-lifestyle.png" class="img img-fluid portfolio__thumbnail">
+              <figcaption></figcaption>
+            </figure>
+          </a>
+        </div>
+        <div class="project col-md-4 col-sm-6 col-xs-12">
+          <a href="#">
+            <figure class="portfolio__item">
+              <img src="../assets/green-route.png" class="img img-fluid portfolio__thumbnail">
+              <figcaption></figcaption>
+            </figure>
+          </a>
+        </div>
+        <div class="project col-md-4 col-sm-6 col-xs-12">
+          <a href="#">
+            <figure class="portfolio__item">
+              <img src="../assets/react-calculator.png" class="img img-fluid portfolio__thumbnail">
+              <figcaption></figcaption>
+            </figure>
+          </a>
+        </div>
+        <div class="project col-md-4 col-sm-6 col-xs-12">
+          <a href="#">
+            <figure class="portfolio__item">
+              <img src="../assets/spent-web.png" class="img img-fluid portfolio__thumbnail">
+              <figcaption></figcaption>
+            </figure>
+          </a>
+        </div>
+        <div class="project col-md-4 col-sm-6 col-xs-12">
+          <a href="#">
+            <figure class="portfolio__item">
+              <img src="../assets/sock-match.png" class="img img-fluid portfolio__thumbnail">
+              <figcaption></figcaption>
+            </figure>
+          </a>
+        </div>
 
-    <div id="portfolio__content">
-      <div class="project">
-        <a href="#">
-          <figure class="portfolio__item">
-            <img src="#">
-            <figcaption></figcaption>
-          </figure>
-        </a>
-        <a href="#">
-         <figure class="portfolio__item">
-           <img src="#">
-           <figcaption></figcaption>
-         </figure>
-        </a>
-        <a href="#">
-          <figure class="portfolio__item">
-            <img src="#">
-            <figcaption></figcaption>
-          </figure>
-        </a>
       </div>
     </div>
   </div>

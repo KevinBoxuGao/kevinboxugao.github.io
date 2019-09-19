@@ -25,6 +25,12 @@ button {
 }
 
 button:active {
+  border: none;
+  outline: none;
+}
+
+button:focus {
+  border: none;
   outline: none;
 }
 
@@ -44,6 +50,10 @@ button:active {
 
 .navbar {
   background: none;
+}
+
+.navbar-toggler-icon {
+  color: white;
 }
 
 .nav-link, .navbar-brand { 
@@ -75,6 +85,12 @@ button:active {
 }
 
 /*portfolio */
+.portfolio__item {
+  border: 0px solid grey
+}
 
+.portfolio__thumbnail {
+  min-width: 100%;
+}
 
   
