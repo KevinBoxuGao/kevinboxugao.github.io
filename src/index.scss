@@ -86,11 +86,17 @@ button:focus {
 
 /*portfolio */
 .portfolio__item {
-  border: 0px solid grey
+  border: 1px solid grey
 }
 
 .portfolio__thumbnail {
   min-width: 100%;
 }
 
+/*contact*/
+.contact__info {
+  svg {
+    height: 3em;
+  }
+}
   
