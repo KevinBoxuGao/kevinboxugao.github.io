@@ -1,0 +1,39 @@
+/*portfolio */
+#portfolio {
+  .container {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
+
+.portfolio__title {
+  font-size: 3em;
+}
+
+.portfolio__item {
+  border: 1px solid grey
+}
+
+.portfolio__thumbnail {
+  min-width: 100%;
+}
+
+.filter-buttons {
+  .active {
+    background: grey;
+  }
+  margin-bottom: 0.75em;
+  display: flex;
+  justify-content: center;
+}
+
+.filter {
+  &:hover {
+    background-color: grey;
+  }
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  border: 3px solid grey;
+}

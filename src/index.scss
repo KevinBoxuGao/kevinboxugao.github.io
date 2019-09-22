@@ -1,11 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./styling/normalize.css";
 
+@import "./styling/navbar.scss";
+@import "./styling/portfolio.scss";
+
+
 h6,h4,h3,h2,h1 {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-p {
+p, a {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -42,33 +46,6 @@ button:focus {
   align-items: center;
 }
 
-/*navbar */
-.navbar {
-  position: fixed;
-  width: 100%;
-}
-
-.navbar {
-  background: none;
-}
-
-.navbar-toggler-icon {
-  color: white;
-}
-
-.nav-link, .navbar-brand { 
-  color: white;
-}
-
-.navbar-nav {
-  flex-direction: row;
-}
-
-.nav-link {
-  padding-right: .5rem !important;
-  padding-left: .5rem !important;
-}
-
 /*hero */
 #hero {
   min-height: 100vh;
@@ -84,19 +61,40 @@ button:focus {
   color: white;
 }
 
-/*portfolio */
-.portfolio__item {
-  border: 1px solid grey
+@include media-breakpoint-down(sm) {
+  .text-box__title {
+    font-size: 3em;
+  }
 }
 
-.portfolio__thumbnail {
-  min-width: 100%;
+@include media-breakpoint-down(xs) {
+  .text-box__title {
+    font-size: 2em;
+  }
 }
+
+
 
 /*contact*/
+#contact {
+  background-color: #0052d4;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.contact__container {
+  background-color: white;
+  border-radius: 25px;
+}
+
 .contact__info {
   svg {
     height: 3em;
   }
 }
   
+/* footer */
+.footer__image {
+  height: 1.5em;
+}
+

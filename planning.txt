@@ -1,6 +1,9 @@
 Colours:
 Background:  #0052d4 → #4364f7 → #6fb1fc 
 
+sections: white
+    
+
 Dominant Color:
 Highlight Color:
 
