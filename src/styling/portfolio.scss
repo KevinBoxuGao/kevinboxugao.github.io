@@ -11,7 +11,26 @@
 }
 
 .portfolio__item {
-  border: 1px solid grey
+  border-radius: 1em;
+  border: 1px solid #212130;
+  overflow: hidden;
+  figcaption {
+    color: white;
+    display: none;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    figcaption {
+      display: block;
+    }
+    img {
+      opacity: 0;
+    }
+    background-color: #212130;
+  }
 }
 
 .portfolio__thumbnail {
@@ -20,7 +39,8 @@
 
 .filter-buttons {
   .active {
-    background: grey;
+    background: #4364f7;
+    color: white;
   }
   margin-bottom: 0.75em;
   display: flex;
@@ -28,12 +48,26 @@
 }
 
 .filter {
-  &:hover {
-    background-color: grey;
-  }
   border-radius: 5px;
   padding: 0.5em 1em;
   margin-left: 0.5em;
   margin-right: 0.5em;
-  border: 3px solid grey;
+}
+
+.portfolio__links {
+  .links {
+    margin: 0;
+  }
+
+  .link__icon {
+    height: 3em;
+    width: auto;
+  }
+
+  ul {
+    padding: 0;
+    li {
+      padding: 0 1em;
+    }
+  }
 }
