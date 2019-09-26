@@ -50,8 +50,11 @@
 .filter {
   border-radius: 5px;
   padding: 0.5em 1em;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .portfolio__links {
@@ -70,4 +73,12 @@
       padding: 0 1em;
     }
   }
+}
+
+.project {
+  display: none;
+}
+
+.featured {
+  display: block;
 }

@@ -1,28 +1,33 @@
-@import "~bootstrap/scss/bootstrap";
-@import "./styling/normalize.css";
+@import '~bootstrap/scss/bootstrap';
+@import './styling/vendor/normalize.css';
 
-@import "./styling/navbar.scss";
-@import "./styling/portfolio.scss";
-@import "./styling/footer.scss";
+@import './styling/constants/variables.scss';
 
-h6,h4,h3,h2,h1 {
-  font-family: 'Source Sans Pro', sans-serif;
+//global styles
+h6,
+h4,
+h3,
+h2,
+h1 {
+  font-family: $primary-font;
 }
 
-ul {
-  list-style-type: none;
+p,
+a {
+  font-family: $secondary-font;
 }
 
-p, a {
-  font-family: 'Open Sans', sans-serif;
-}
-
-* {
-	outline: none;
+a {
+  text-decoration: none;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
 }
 
 button {
@@ -30,72 +35,26 @@ button {
   outline: none;
   border: none;
   border-style: none;
-}
-
-button:active {
-  border: none;
-  outline: none;
-}
-
-button:focus {
-  border: none;
-  outline: none;
+  &:active {
+    border: none;
+    outline: none;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
 
 .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
 
   display: flex;
   align-items: center;
 }
 
-/*hero */
-#hero {
-  min-height: 100vh;
-  color: white;
-  background: linear-gradient(0.08deg, #0052D4 -0.09%, #4364F7 15.07%, #69A7FB 88.75%, #6FB1FC 99.91%);
-}
-
-.jumbotron {
-  background: none;
-}
-
-.scroll-down-button {
-  color: white;
-}
-
-@include media-breakpoint-down(sm) {
-  .text-box__title {
-    font-size: 3em;
-  }
-}
-
-@include media-breakpoint-down(xs) {
-  .text-box__title {
-    font-size: 2em;
-  }
-}
-
-
-
-/*contact*/
-#contact {
-  background-color: #0052d4;
-  padding-top: 3em;
-  padding-bottom: 3em;
-}
-
-.contact__container {
-  background-color: white;
-  border-radius: 25px;
-}
-
-.contact__info {
-  svg {
-    height: 3em;
-  }
-}
-  
-
-
+@import './styling/components/navbar.scss';
+@import './styling/components/hero.scss';
+@import './styling/components/portfolio.scss';
+@import './styling/components/contact.scss';
+@import './styling/components/footer.scss';

@@ -11,9 +11,9 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         exclude: /(node_modules|bower_components)/,
-        options: { presets: ["@babel/env"] }
+        options: { presets: ['@babel/env'] }
       },
       {
         test: /\.css$/,
@@ -24,31 +24,28 @@ module.exports = {
               // you can specify a publicPath here
               // by default it uses publicPath in webpackOptions.output
               publicPath: '../',
-              hmr: process.env.NODE_ENV === 'development',
-            },
+              hmr: process.env.NODE_ENV === 'development'
+            }
           },
-          'css-loader',
-        ],
+          'css-loader'
+        ]
       },
       {
         test: /\.scss$/,
         use: [
-          {loader: 'style-loader'},
-          {loader: MiniCssExtractPlugin.loader},
-          {loader: 'css-loader'},
+          { loader: 'style-loader' },
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
-                return [
-                  require('autoprefixer')
-                ];
+              plugins: function() {
+                return [require('autoprefixer')];
               }
             }
           },
-          {loader: 'sass-loader'},
-        ],
-        
+          { loader: 'sass-loader' }
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|pdf|svg)$/,
@@ -57,28 +54,41 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]'
-            },
-          },
-        ],
-      },
+            }
+          }
+        ]
+      }
     ]
   },
-  resolve: { modules: ['node_modules', 'src'], extensions: ["*", ".js", ".jsx"] },
+  resolve: {
+    modules: ['node_modules', 'src'],
+    extensions: ['*', '.js', '.jsx']
+  },
   plugins: [
     // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css',
+      chunkFilename: '[id].css'
     }),
     new HtmlWebpackPlugin({
       hash: true,
       template: './public/index.html',
-      filename: 'index.html',
+      filename: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      template: './public/about.html',
+      filename: 'about.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      template: './public/contact.html',
+      filename: 'contact.html'
+    })
   ],
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].bundle.js'
   }
 };
