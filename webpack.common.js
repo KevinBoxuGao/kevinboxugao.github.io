@@ -75,16 +75,6 @@ module.exports = {
       hash: true,
       template: './public/index.html',
       filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      template: './public/about.html',
-      filename: 'about.html'
-    }),
-    new HtmlWebpackPlugin({
-      hash: true,
-      template: './public/contact.html',
-      filename: 'contact.html'
     })
   ],
   output: {
