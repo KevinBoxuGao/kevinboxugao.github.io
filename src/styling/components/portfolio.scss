@@ -76,9 +76,11 @@
 }
 
 .project {
+  transition: opacity 500 ease-in-out;
   display: none;
 }
 
-.featured {
+.project-active {
+  transition: opacity 500 ease-in-out;
   display: block;
 }

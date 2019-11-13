@@ -1,43 +1,44 @@
-import 'bootstrap';
-import $ from 'jquery';
+import "bootstrap";
+import $ from "jquery";
 
-import './index.scss';
+import "./index.scss";
 
 $(document).ready(function() {
   //navigation
   $(document).scroll(function() {
-    var $nav = $('.navbar');
-    $nav.toggleClass('nav--scroll', $(this).scrollTop() > $nav.height());
+    var $nav = $(".navbar");
+    $nav.toggleClass("nav--scroll", $(this).scrollTop() > $nav.height());
   });
 
-  $('.open-overlay').click(function() {
-    $('.nav__overlay').css('height', '100%');
+  $(".open-overlay").click(function() {
+    $(".nav__overlay").css("height", "100%");
   });
 
-  $('.close-overlay').click(function() {
-    $('.nav__overlay').height('0');
+  $(".close-overlay").click(function() {
+    $(".nav__overlay").height("0");
   });
 
   //scroll link buttons
-  $('.scroll-down-button').click(function() {
-    $('html, body').animate(
+  $(".scroll-down-button").click(function() {
+    $("html, body").animate(
       {
-        scrollTop: $('#portfolio').offset().top
+        scrollTop: $("#portfolio").offset().top
       },
       1000
     );
   });
 
   //portfolio filtering
-  $('.filter').click(function() {
-    $('.active').toggleClass('active');
-    $(this).toggleClass('active');
+  $(".filter").click(function() {
+    $(".active").toggleClass("active");
+    $(this).toggleClass("active");
 
-    $('.project').css('display', 'none');
-    $('.project')
-      .filter($(this).attr('data-filter'))
-      .css('display', 'block');
-
-    //.css('display', 'block');
+    $(".project")
+      .removeClass("project-active")
+      .fadeToggle(300);
+    $(".project")
+      .filter($(this).attr("data-filter"))
+      .addClass("project-active")
+      .fadeIn(300);
   });
 });
