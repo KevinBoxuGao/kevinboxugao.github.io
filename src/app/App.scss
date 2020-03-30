@@ -1,14 +1,12 @@
-.loading-enter {
-  opacity: 0;
-}
-.loading-enter-active {
-  opacity: 1;
-  transition: opacity 200ms;
-}
-.loading-exit {
-  opacity: 1;
-}
-.loading-exit-active {
-  opacity: 0;
-  transition: opacity 200ms;
+//variables and theme
+/*Colors*/
+$primary-color: #000;
+$secondary-color: #000;
+$highlight-color: #000;
+$secondary-highlight-color: #000;
+/*Fonts*/
+$primary-font: "Montserrat", sans-serif;
+
+body {
+  font-family: $primary-font;
 }
