@@ -5,41 +5,43 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const pages = ["index"];
-const htmlPlugins = pages.map(pageName => {
+const htmlPlugins = pages.map((pageName) => {
   return new HtmlWebpackPlugin({
     hash: true,
     title: pageName,
     template: "./public/index.html",
     chunks: [pageName, "vendor"],
     filename: pageName + ".html",
-    excludeChunks: ["server"]
+    excludeChunks: ["server"],
+    favicon: "./public/favicon.ico",
   });
 });
 
 module.exports = {
   entry: {
-    index: "./src/index.js"
+    index: "./src/index.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
   },
   resolve: {
     modules: ["node_modules", "src"],
     extensions: ["*", ".js", ".jsx"],
     alias: {
       src: path.resolve(__dirname, "src"),
+      assets: path.resolve(__dirname, "src", "assets"),
       pages: path.resolve(__dirname, "src", "pages"),
-      components: path.resolve(__dirname, "src", "components")
-    }
+      components: path.resolve(__dirname, "src", "components"),
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].css"
+      chunkFilename: "[id].css",
     }),
-    ...htmlPlugins
+    ...htmlPlugins,
   ],
 
   optimization: {
@@ -49,10 +51,10 @@ module.exports = {
           test: /node_modules/,
           chunks: "initial",
           name: "vendor",
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -60,7 +62,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
-        options: { presets: ["@babel/preset-env"] }
+        options: { presets: ["@babel/preset-env"] },
       },
       {
         test: /\.css$/,
@@ -69,11 +71,11 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: "../",
-              hmr: process.env.NODE_ENV === "development"
-            }
+              hmr: process.env.NODE_ENV === "development",
+            },
           },
-          "css-loader"
-        ]
+          "css-loader",
+        ],
       },
       {
         test: /\.scss$/,
@@ -84,23 +86,23 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: function() {
+              plugins: function () {
                 return [require("autoprefixer")];
-              }
-            }
+              },
+            },
           },
-          { loader: "sass-loader" }
-        ]
+          { loader: "sass-loader" },
+        ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/,
+        test: /\.(png|jp(e*)g|svg|gif)$/,
         use: [
           {
             loader: "file-loader",
-            options: {}
-          }
-        ]
-      }
-    ]
-  }
+            options: {},
+          },
+        ],
+      },
+    ],
+  },
 };

@@ -1,12 +1,49 @@
 //variables and theme
 /*Colors*/
-$primary-color: #000;
-$secondary-color: #000;
-$highlight-color: #000;
-$secondary-highlight-color: #000;
+$dark-grey: #282828;
+$light-gray: #c4c4c4;
+$highlight-color: #005ecd;
+$white: #ffffff;
+$black: #000000;
+$devpost-blue: #154c75;
 /*Fonts*/
-$primary-font: "Montserrat", sans-serif;
+$primary-font: "Raleway", sans-serif;
 
 body {
+  color: white;
   font-family: $primary-font;
+  background: $dark-grey;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: None;
 }
