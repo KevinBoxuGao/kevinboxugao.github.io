@@ -1,0 +1,94 @@
+/*menu*/
+.menu {
+  font-size: 1rem;
+}
+
+.menu.active > .page {
+  display: block;
+}
+
+.button {
+  z-index: 3;
+  position: fixed;
+  top: 2em;
+  left: 1em;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button__icon {
+  height: 2em;
+  width: auto;
+}
+
+.page {
+  display: none;
+  height: 100%;
+  width: 100%;
+  background: black;
+  position: fixed;
+  font-size: 6em;
+  z-index: 2;
+}
+
+.page__links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.page__links > li {
+  position: relative;
+  font-size: 0.5em;
+  font-weight: 400;
+  margin: 0.2em;
+  text-align: center;
+}
+
+.menu_link {
+  color: white;
+  display: inline-block;
+  padding: 0;
+  display: inline;
+  text-decoration: none;
+  position: relative;
+}
+
+.menu_link:after {
+  content: "";
+  position: absolute;
+  height: 0.15em;
+  bottom: -15px;
+  left: 0;
+  display: block;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+.menu_link:hover:after {
+  visibility: visible;
+  transform: scaleX(1);
+  width: 100%;
+}
+.menu_link:hover {
+  cursor: pointer;
+}
+
+/*change font size on resize*/
+@media (max-width: 992px) {
+  .menu {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .menu {
+    font-size: 0.75rem;
+  }
+}

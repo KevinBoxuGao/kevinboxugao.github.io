@@ -1,0 +1,11 @@
+.layout {
+  padding: 4em;
+}
+.section-title {
+  margin: 0;
+}
+.section-description {
+  font-size: 3em;
+  margin: 0;
+  margin-bottom: 0.2em;
+}

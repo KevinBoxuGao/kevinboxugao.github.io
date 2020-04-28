@@ -1,0 +1,38 @@
+.projects {
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.project_item {
+  background: #c4c4c4;
+  flex-basis: 33%;
+  margin: 0.1rem 0;
+  width: 20em;
+  min-height: 10em;
+}
+.project_item:hover {
+  cursor: pointer;
+}
+
+/*change font size on resize*/
+@media (max-width: 992px) {
+  .projects {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .projects {
+    font-size: 0.75rem;
+  }
+  .project_item {
+    flex-basis: 49.5%;
+  }
+}
+@media (max-width: 555px) {
+  .projects {
+    font-size: 0.5rem;
+  }
+}
