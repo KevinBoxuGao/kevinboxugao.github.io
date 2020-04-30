@@ -1,0 +1,29 @@
+.display-image {
+  width: 100%;
+  height: auto;
+}
+
+.slider_image {
+  width: 8em;
+  height: auto;
+  margin: 0 0.5em;
+}
+
+.image-slider {
+  margin: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.slider_right-arrow {
+  height: 3em;
+  width: auto;
+}
+
+.slider_left-arrow {
+  transform: rotate(180deg);
+  height: 3em;
+  width: auto;
+}

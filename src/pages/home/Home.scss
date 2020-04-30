@@ -1,0 +1,54 @@
+/*links*/
+/*more link*/
+.more-link {
+  color: white;
+  margin: 0.1rem 0;
+  font-size: 2em;
+  font-weight: 700;
+  background: #c4c4c4;
+  padding: 0.5em 1em;
+}
+/*other link*/
+.links {
+  width: 100%;
+  display: flex;
+  font-size: 2em;
+  font-weight: 700;
+}
+.links > a {
+  color: white;
+}
+.links p {
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+.github-link {
+  margin: 0.1rem 0;
+  background: black;
+  flex-basis: 100%;
+}
+.github-link:hover {
+  cursor: pointer;
+}
+
+.devpost-link {
+  margin: 0.1rem 0;
+  background: #154c75;
+  flex-basis: 100%;
+}
+.devpost-link:hover {
+  cursor: pointer;
+}
+
+/*change font size on resize*/
+@media (max-width: 555px) {
+  .project,
+  .github-link,
+  .devpost-link {
+    flex-basis: 100%;
+  }
+  .links {
+    flex-direction: column;
+  }
+}

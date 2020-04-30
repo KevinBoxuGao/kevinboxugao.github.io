@@ -13,12 +13,20 @@ body {
   color: white;
   font-family: $primary-font;
   background: $dark-grey;
+  overflow: initial;
 }
 
-button {
-  background: none;
-  border: none;
-  outline: none;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 * {
@@ -26,22 +34,14 @@ button {
   padding: 0;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
-#root {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  overflow-y: scroll;
-  overflow-x: hidden;
+button {
+  background: none;
+  border: none;
+  outline: none;
 }
 
 a {

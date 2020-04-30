@@ -1,4 +1,5 @@
 const path = require("path");
+const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -30,6 +31,7 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"],
     alias: {
       src: path.resolve(__dirname, "src"),
+      data: path.resolve(__dirname, "src", "data"),
       assets: path.resolve(__dirname, "src", "assets"),
       pages: path.resolve(__dirname, "src", "pages"),
       components: path.resolve(__dirname, "src", "components"),

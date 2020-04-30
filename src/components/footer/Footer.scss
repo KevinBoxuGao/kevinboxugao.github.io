@@ -1,6 +1,7 @@
 #footer {
+  overflow: hidden;
   display: flex;
-  width: 100vw;
+  width: 100%;
   background: white;
   color: black;
   justify-content: space-between;
@@ -19,7 +20,6 @@
   }
   .link_group {
     color: black;
-    margin: 1em 1.5em;
     h3 {
       font-size: 2em;
     }
@@ -27,7 +27,7 @@
       list-style: none;
       li {
         font-weight: 400;
-        font-size: 1em;
+        font-size: 1.5em;
         &:hover {
           cursor: pointer;
           color: #c4c4c4;
@@ -46,10 +46,14 @@
   #footer .footer_logo {
     display: none;
   }
-}
-
-@media (max-width: 362px) {
-  #footer {
-    font-size: 0.6rem;
+  .footer_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .link_group {
+    text-align: center;
+    outline: 1px #c4c4c4 solid;
+    padding: 1em;
   }
 }

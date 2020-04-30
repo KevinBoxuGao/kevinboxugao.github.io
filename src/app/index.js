@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -17,16 +17,18 @@ import Menu from "components/menu";
 //function component
 function App() {
   return (
-    <Router>
-      <Menu />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/work" component={Work} />
-        <Route path="/about" component={About} />
-        <Route path="/404" component={PageNotFound} />
-        <Redirect to="/404" />
-      </Switch>
-    </Router>
+    <Suspense fallback={<div>loading</div>}>
+      <Router>
+        <Menu />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/work" component={Work} />
+          <Route path="/about" component={About} />
+          <Route path="/404" component={PageNotFound} />
+          <Redirect to="/404" />
+        </Switch>
+      </Router>
+    </Suspense>
   );
 }
 

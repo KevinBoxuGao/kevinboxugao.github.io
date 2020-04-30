@@ -1,20 +1,34 @@
 .project {
-  width: 10em;
-  height: 5em;
+  .additional-links {
+    text-align: left;
+    .github-button {
+      display: inline-block;
+      color: white;
+      padding: 0.5em;
+      background: #000000;
+      margin-right: 1em;
+    }
+    .devpost-button {
+      display: inline-block;
+      color: white;
+      padding: 0.5em;
+      background: #154c75;
+    }
+  }
 }
 
 .project-button {
-  height: 100%;
-  width: 100%;
+  flex: 1.3344;
   overflow: hidden;
   img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block; /* remove extra space below image */
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
   }
 }
 
 .project-page {
+  align-items: center;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -24,13 +38,20 @@
   z-index: 5;
   display: none;
   color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
   &.active {
-    display: block;
+    display: flex;
   }
 
   .exit-button {
     position: absolute;
-    top: 0;
+    top: 1em;
+    right: 1em;
+    img {
+      width: 1.4em;
+      height: auto;
+    }
   }
 
   .basic-info {
@@ -38,19 +59,19 @@
   }
 
   .title {
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 0.2em;
   }
   .description {
-    font-size: 1.25em;
+    font-size: 1.25rem;
     margin-bottom: 1em;
   }
   .site-button {
     background: #005ecd;
     color: white;
-    margin: 0.5em 0;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     padding: 0.5em;
+    display: inline-block;
   }
 
   .main-image {
@@ -65,6 +86,46 @@
     .images-child {
       width: 5em;
       height: auto;
+    }
+  }
+}
+
+.project-page_container {
+  margin: auto;
+  display: inline-flex;
+}
+
+.project-display {
+  margin: 2em 0 2em 3em;
+  width: 65%;
+}
+
+.project-details {
+  width: 35%;
+  overflow: hidden;
+  margin: 2em 2.5em 2em 1.5em;
+
+  .basic-info {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-page_container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-display {
+    margin: 0 3em;
+    width: auto;
+  }
+  .project-details {
+    width: auto;
+    margin: 0 3em;
+    .basic-info,
+    .additional-links {
+      text-align: center;
+      font-size: 1rem;
     }
   }
 }

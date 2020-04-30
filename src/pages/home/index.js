@@ -1,16 +1,36 @@
 import React from "react";
-import Scrollbar from "./scrollbar";
-import Header from "./header";
-import Portfolio from "./portfolio";
-import Footer from "./footer";
+import { Link } from "react-router-dom";
+import Header from "components/header";
+import Layout from "components/layout";
+import Portfolio from "components/portfolio";
+import Footer from "components/footer";
+import "./Home.scss";
+
+import projects from "data/projects.js";
 
 function Home() {
   return (
-    <div className="home">
+    <div id="home-page">
       <Header />
-      <Portfolio />
+      <Layout>
+        <h1 className="section-title">Work</h1>
+        <p className="section-description">
+          Personal programs, hackathon projects and much more
+        </p>
+        <Portfolio projects={projects} />
+        <Link to="/work">
+          <p className="more-link">More</p>
+        </Link>
+        <div className="links">
+          <a href="https://github.com/KevinBoxuGao" className="github-link">
+            <p>More on Github</p>
+          </a>
+          <a href="https://devpost.com/KevinBoxuGao" className="devpost-link">
+            <p>Devpost</p>
+          </a>
+        </div>
+      </Layout>
       <Footer />
-      <Scrollbar />
     </div>
   );
 }
