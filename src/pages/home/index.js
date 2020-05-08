@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+
 import Header from "components/header";
 import Layout from "components/layout";
 import Portfolio from "components/portfolio";
@@ -9,10 +10,15 @@ import "./Home.scss";
 import projects from "data/projects.js";
 
 function Home() {
+  var layoutRef = useRef();
+  const handleScroll = (ref) => {
+    //ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div id="home-page">
-      <Header />
-      <Layout>
+      <Header scrollDown={handleScroll(layoutRef)} />
+      <Layout ref={layoutRef}>
         <h1 className="section-title">Work</h1>
         <p className="section-description">
           Personal programs, hackathon projects and much more
