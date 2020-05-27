@@ -1,29 +1,61 @@
+.image-carousel {
+  overflow: hidden;
+  background: black;
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%;
+  max-width: 100%;
+}
+
 .display-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  object-fit: contain;
   width: 100%;
-  height: auto;
+  height: 100%;
+
+  max-height: 100%;
+  max-width: 100%;
 }
 
-.slider_image {
-  width: 8em;
-  height: auto;
-  margin: 0 0.5em;
+.prev,
+.next {
+  padding: 1em;
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.image-slider {
-  margin: 1em 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.next {
+  right: 0;
 }
 
-.slider_right-arrow {
-  height: 3em;
-  width: auto;
+.prev {
+  transform: translateY(-50%) rotate(180deg);
+  top: 50%;
+  font-size: 1rem;
+  left: 0;
 }
 
-.slider_left-arrow {
-  transform: rotate(180deg);
-  height: 3em;
-  width: auto;
+.image-control {
+  padding: 1rem;
+  text-align: center;
+}
+
+.dot {
+  margin: 0 5px;
+  height: 1rem;
+  width: 1rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: #4b4c4c;
 }

@@ -1,7 +1,23 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Toggle from "./Toggle";
 import { Link } from "react-router-dom";
-import Hamburger from "assets/icons/hamburger.svg";
 import "./Menu.scss";
+
+const sidebar = {
+  open: {
+    x: "0%",
+    transition: {
+      stiffness: 20,
+    },
+  },
+  closed: {
+    x: "-100%",
+    transition: {
+      stiffness: 400,
+    },
+  },
+};
 
 function Menu() {
   const [menuOpen, toggleMenu] = useState(false);
@@ -12,12 +28,14 @@ function Menu() {
   };
 
   return (
-    <div className={"menu" + (menuOpen ? " active" : "")}>
-      <button className="menu_button" onClick={handleMenuToggle}>
-        <img className="icon" src={Hamburger} />
-      </button>
-      <div className="menu_page">
-        <ul className="links">
+    <motion.div
+      className="menu"
+      initial={false}
+      animate={menuOpen ? "open" : "closed"}
+    >
+      <Toggle toggle={handleMenuToggle} />
+      <motion.div className="menu_page" variants={sidebar}>
+        <ul className="menu_links">
           <li>
             <Link to="/" className="menu_link" onClick={handleMenuToggle}>
               Home
@@ -34,8 +52,8 @@ function Menu() {
             </Link>
           </li>
         </ul>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

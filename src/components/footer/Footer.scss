@@ -11,10 +11,16 @@
   justify-content: space-between;
   .footer_logo {
     margin: 1.5em;
-    width: 8em;
-    height: 8em;
     display: inline-block;
     color: black;
+    &:hover {
+      cursor: pointer;
+    }
+    g {
+      path {
+        fill: black;
+      }
+    }
   }
   .footer_links {
     display: inline-flex;
@@ -32,9 +38,12 @@
       li {
         font-weight: 400;
         font-size: 1.5em;
-        &:hover {
-          cursor: pointer;
-          color: #c4c4c4;
+        color: #433f40;
+        a {
+          color: #433f40;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }

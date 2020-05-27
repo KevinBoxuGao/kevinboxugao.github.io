@@ -13,7 +13,6 @@ body {
   color: white;
   font-family: $primary-font;
   background: $dark-grey;
-  overflow: initial;
 }
 
 html,
@@ -26,16 +25,11 @@ body {
 #root {
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
 }
 
 * {
   margin: 0;
   padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 button {
@@ -46,4 +40,9 @@ button {
 
 a {
   text-decoration: None;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
 }

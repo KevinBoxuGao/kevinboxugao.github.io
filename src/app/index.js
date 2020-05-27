@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useRef } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -6,19 +6,42 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.scss";
+import createHistory from "history/createBrowserHistory";
+export const history = createHistory();
 
 //pages
-import Home from "pages/home";
-import Work from "pages/work";
-import About from "pages/about";
-import PageNotFound from "pages/pagenotfound";
+const Home = React.lazy(() => {
+  return Promise.all([
+    import("pages/home"),
+    new Promise((resolve) => setTimeout(resolve, 1000)),
+  ]).then(([moduleExports]) => moduleExports);
+});
+const About = React.lazy(() => {
+  return Promise.all([
+    import("pages/about"),
+    new Promise((resolve) => setTimeout(resolve, 1000)),
+  ]).then(([moduleExports]) => moduleExports);
+});
+const Work = React.lazy(() => {
+  return Promise.all([
+    import("pages/work"),
+    new Promise((resolve) => setTimeout(resolve, 1000)),
+  ]).then(([moduleExports]) => moduleExports);
+});
+const PageNotFound = React.lazy(() => {
+  return Promise.all([
+    import("pages/pagenotfound"),
+    new Promise((resolve) => setTimeout(resolve, 1000)),
+  ]).then(([moduleExports]) => moduleExports);
+});
 import Menu from "components/menu";
+import Loading from "pages/loading";
 
 //function component
 function App() {
   return (
-    <Suspense fallback={<div>loading</div>}>
-      <Router>
+    <Router>
+      <Suspense fallback={<Loading />}>
         <Menu />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -27,8 +50,8 @@ function App() {
           <Route path="/404" component={PageNotFound} />
           <Redirect to="/404" />
         </Switch>
-      </Router>
-    </Suspense>
+      </Suspense>
+    </Router>
   );
 }
 

@@ -23,26 +23,20 @@
 }
 
 //menu
-.menu.active {
-  .menu_page {
-    display: flex;
-  }
-}
-
 .menu_page {
   align-items: center;
   justify-content: center;
   position: fixed;
   text-align: center;
   overflow-y: auto;
-  display: none;
+  display: flex;
   height: 100%;
   width: 100%;
   background: black;
   font-size: 6em;
   z-index: 2;
 
-  .links {
+  .menu_links {
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -50,7 +44,7 @@
   }
   li {
     position: relative;
-    font-size: 0.5em;
+    font-size: 1em;
     font-weight: 400;
     margin: 0.2em;
     text-align: center;
@@ -84,18 +78,4 @@
 }
 .menu_link:hover {
   cursor: pointer;
-}
-
-.menu_button {
-  z-index: 3;
-  position: fixed;
-  top: 1.5em;
-  left: 1em;
-  .icon {
-    width: 3em;
-    height: auto;
-  }
-  &:hover {
-    cursor: pointer;
-  }
 }

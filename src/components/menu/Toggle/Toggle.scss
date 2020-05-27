@@ -1,0 +1,9 @@
+.menu_button {
+  z-index: 3;
+  position: fixed;
+  top: 1.5em;
+  left: 1em;
+  &:hover {
+    cursor: pointer;
+  }
+}

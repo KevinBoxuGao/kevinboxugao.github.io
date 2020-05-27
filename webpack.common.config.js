@@ -97,7 +97,21 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader",
+          },
+          {
+            loader: "react-svg-loader",
+            options: {
+              jsx: true, // true outputs JSX tags
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jp(e*)g|gif)$/,
         use: [
           {
             loader: "file-loader",

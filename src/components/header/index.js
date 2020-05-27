@@ -1,56 +1,140 @@
-import React, { useRef } from "react";
-import { useSpring, useChain, animated } from "react-spring";
-import Arrow from "assets/icons/portfolio.svg";
+import React from "react";
+import { motion } from "framer-motion";
 import "./Header.scss";
 
-const config = { mass: 10, tension: 2000, friction: 200, duration: 250 };
+const Path = (props) => (
+  <motion.path fill="transparent" strokeWidth="4" stroke="white" {...props} />
+);
+
+const headerVariants = {
+  hidden: {
+    transition: { staggerChildren: 0.5, delay: 0.5 },
+  },
+  display: {
+    transition: { staggerChildren: 0.5, delay: 0.5 },
+  },
+};
+const titleVariants = {
+  hidden: {
+    transition: { staggerChildren: 0.3 },
+  },
+  display: {
+    transition: { staggerChildren: 0.3 },
+  },
+};
+const titleItem = {
+  display: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  hidden: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
+const buttonContainer = {
+  display: {
+    opacity: 1,
+    transition: { staggerChildren: 0.5, delay: 0.5 },
+  },
+  hidden: {
+    opacity: 0,
+    transition: { staggerChildren: 0.5, delay: 0.5 },
+  },
+  hover: {
+    transition: { staggerChildren: 0.5, delay: 0.5 },
+  },
+};
+
+const buttonVariants = {
+  display: {
+    opacity: 1,
+  },
+  hidden: {
+    opacity: 0,
+  },
+  hover: {
+    y: -10,
+    transition: {
+      y: { stiffness: 1000, velocity: -1000 },
+    },
+  },
+};
 
 function Header(props) {
-  const nameRef = useRef();
-  const nameProps = useSpring({
-    config,
-    from: { opacity: 0, transform: "translateY(20px)" },
-    to: { opacity: 1, transform: "translateY(0)" },
-    ref: nameRef,
-  });
-  const titleRef = useRef();
-  const titleProps = useSpring({
-    config,
-    from: { opacity: 0, transform: "translateY(20px)" },
-    to: { opacity: 1, transform: "translateY(0)" },
-    ref: titleRef,
-  });
-  const buttonRef = useRef();
-  const buttonProps = useSpring({
-    config,
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    ref: buttonRef,
-  });
-
-  useChain([nameRef, titleRef, buttonRef]);
-
   return (
-    <div id="header">
-      <div className="title_container">
-        <animated.p style={nameProps} className="title">
+    <motion.div
+      id="header"
+      initial={"hidden"}
+      animate={"display"}
+      variants={headerVariants}
+    >
+      <motion.div className="title_container" variants={titleVariants}>
+        <motion.p variants={titleItem} className="title">
           Kevin Gao
-        </animated.p>
-        <animated.p style={titleProps} className="subtitle">
+        </motion.p>
+        <motion.p variants={titleItem} className="subtitle">
           Web Developer
-        </animated.p>
-      </div>
-      <animated.div
-        style={buttonProps}
+        </motion.p>
+      </motion.div>
+      <motion.div
         className="button_container"
-        onClick={() => props.scrollDown}
+        whileHover="hover"
+        variants={buttonContainer}
+        onClick={props.handleScroll}
       >
         <a className="continue-button">
-          <p className="button_label">Portfolio</p>
-          <img className="button_icon" src={Arrow} />
+          <motion.p variants={buttonVariants} className="button_label">
+            Portfolio
+          </motion.p>
+          <motion.svg
+            variants={{
+              hidden: {
+                width: "150",
+                height: "70",
+                viewBox: "0 0 150 70",
+              },
+              display: {
+                width: "150",
+                height: "70",
+                viewBox: "0 0 150 70",
+              },
+              hover: {
+                width: "150",
+                height: "70",
+                viewBox: "0 0 90 120",
+              },
+            }}
+          >
+            <Path
+              variants={{
+                hidden: {
+                  d: "M144.926 2L75 67.2642L5.07404 2H75L144.926 2Z",
+                  stroke: "white",
+                  strokeWidth: "4",
+                },
+                display: {
+                  d: "M144.926 2L75 67.2642L5.07404 2H75L144.926 2Z",
+                  stroke: "white",
+                  strokeWidth: "4",
+                },
+                hover: {
+                  d: "M144.926 2L75 67.2642L5.07404 2H75L144.926 2Z",
+                  stroke: "white",
+                  strokeWidth: "4",
+                },
+              }}
+            />
+          </motion.svg>
         </a>
-      </animated.div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

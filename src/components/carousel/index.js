@@ -1,58 +1,85 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Arrow from "assets/icons/Arrow.svg";
+import { wrap } from "@popmotion/popcorn";
 import PropTypes from "prop-types";
 
 import "./Carousel.scss";
-import Arrow from "assets/icons/Arrow.svg";
+
+const variants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => ({
+    zIndex: 0,
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+};
 
 function Carousel(props) {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [startIndex, setStart] = useState(0);
-  const [numSliderImages, setNumSliderImages] = useState(3);
-  const [endIndex, setEnd] = useState(0);
+  const [[image, direction], setScroll] = useState([0, 0]);
+  const imageIndex = wrap(0, props.images.length, image);
 
-  const scrollRight = () => {
-    if (currentImage < props.images.length - 1) {
-      setCurrentImage(currentImage + 1);
-      if (startIndex + numSliderImages < props.images.length) {
-        setStart(startIndex + 1);
-      }
-    }
+  const scrollSelect = (index) => {
+    console.log(index);
+    var direction = image > index ? -1 : 1;
+    setScroll([index, direction]);
   };
 
-  const scrollLeft = () => {
-    if (currentImage > 0) {
-      setCurrentImage(currentImage - 1);
-      if (startIndex > 0) {
-        setStart(startIndex - 1);
-      }
-    }
+  const scroll = (direction) => {
+    setScroll([image + direction, direction]);
   };
-
-  useEffect(() => {
-    let endIndex = startIndex + numSliderImages;
-    endIndex = props.images.length < endIndex ? props.images.length : endIndex;
-    setEnd(endIndex);
-  }, [startIndex]);
 
   return (
-    <div className="carousel">
-      <img className="display-image" src={props.images[currentImage]} />
-      <div className="image-slider">
-        <img className="slider_left-arrow" src={Arrow} onClick={scrollLeft} />
-        {props.images.slice(startIndex, endIndex).map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            className="slider_image"
-            onClick={() => setCurrentImage(index)}
+    <React.Fragment>
+      <div className="image-carousel">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            className="display-image"
+            key={image}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            variants={variants}
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 200 },
+              opacity: { duration: 0.2 },
+            }}
+            src={props.images[imageIndex]}
           />
-        ))}
-        <img className="slider_right-arrow" src={Arrow} onClick={scrollRight} />
+        </AnimatePresence>
+        <Arrow
+          viewBox="0 0 48 105"
+          className="next"
+          onClick={() => scroll(1)}
+          height="20%"
+        />
+        <Arrow
+          viewBox="0 0 48 105"
+          className="prev"
+          onClick={() => scroll(-1)}
+          height="20%"
+        />
       </div>
-    </div>
+      <div className="image-control">
+        {props.images.map((image, index) => (
+          <span
+            className={"dot " + (imageIndex == index ? "active" : "")}
+            key={index}
+            onClick={() => scrollSelect(index)}
+          ></span>
+        ))}
+      </div>
+    </React.Fragment>
   );
 }
-
 Carousel.propTypes = {
   images: PropTypes.array.isRequired,
 };

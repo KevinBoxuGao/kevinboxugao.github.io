@@ -1,4 +1,5 @@
 .project {
+  background-color: #000000;
   .additional-links {
     text-align: left;
     .github-button {
@@ -18,17 +19,37 @@
 }
 
 .project-button {
-  flex: 1.3344;
+  width: 100%;
+  padding-top: 56.25%;
+  text-align: center;
+  position: relative;
   overflow: hidden;
   img {
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
+    top: 0;
+    left: 0;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
   }
 }
 
+.project-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5em;
+}
+
 .project-page {
-  align-items: center;
+  &:hover {
+    cursor: default;
+  }
   position: fixed;
   width: 100%;
   height: 100%;
@@ -36,26 +57,21 @@
   left: 0;
   background: #282828;
   z-index: 5;
-  display: none;
   color: white;
   overflow-y: auto;
   overflow-x: hidden;
-  &.active {
-    display: flex;
-  }
 
   .exit-button {
+    &:hover {
+      cursor: pointer;
+    }
     position: absolute;
     top: 1em;
     right: 1em;
-    img {
-      width: 1.4em;
-      height: auto;
+    svg {
+      height: 2em;
+      width: auto;
     }
-  }
-
-  .basic-info {
-    text-align: left;
   }
 
   .title {
@@ -90,42 +106,65 @@
   }
 }
 
-.project-page_container {
-  margin: auto;
-  display: inline-flex;
+.project-page_content {
+  padding: 5em;
+  display: flex;
 }
 
 .project-display {
-  margin: 2em 0 2em 3em;
-  width: 65%;
+  display: inline-block;
+  flex: 3;
+  margin: 1em;
 }
 
 .project-details {
-  width: 35%;
-  overflow: hidden;
-  margin: 2em 2.5em 2em 1.5em;
-
+  margin: 1em;
+  flex: 2;
+  display: inline-block;
   .basic-info {
     margin-bottom: 1em;
+    text-align: left;
+  }
+}
+
+.project_tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em 0;
+  span {
+    padding: 0.5em;
+    border: 2px solid #6d6d6d;
+    background-color: #424242;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
   }
 }
 
 @media (max-width: 768px) {
-  .project-page_container {
+  .project-page_content {
     flex-direction: column;
-    align-items: center;
   }
   .project-display {
-    margin: 0 3em;
-    width: auto;
+    flex: 1;
   }
   .project-details {
-    width: auto;
-    margin: 0 3em;
+    flex: 1;
     .basic-info,
     .additional-links {
       text-align: center;
       font-size: 1rem;
     }
+  }
+  .project_tech-stack {
+    justify-content: center;
+    span {
+      margin: 0.2em;
+      font-size: 1rem;
+    }
+  }
+}
+@media (max-width: 555px) {
+  .project-title {
+    font-size: 4em;
   }
 }
