@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "components/layout";
 import Footer from "components/footer";
 import "./About.scss";
+import Pdf from "assets/KevinGaoResume.pdf";
 import { motion } from "framer-motion";
 
 const textVariants = {
@@ -150,7 +151,7 @@ function About() {
               </ul>
             </motion.div>
           </motion.div>
-          <motion.a variants={fadeIn} className="about_resume-link">
+          <motion.a href={Pdf} variants={fadeIn} className="about_resume-link">
             Resume
           </motion.a>
         </motion.div>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "assets/icons/logo.svg";
 import VisibilitySensor from "react-visibility-sensor";
+import Pdf from "assets/KevinGaoResume.pdf";
 import "./Footer.scss";
 
 const FooterVariants = {
@@ -71,7 +72,7 @@ function Footer(props) {
                     <motion.a
                       whileHover="hover"
                       variants={linkVariants}
-                      href=""
+                      href={Pdf}
                     >
                       Resume
                     </motion.a>
