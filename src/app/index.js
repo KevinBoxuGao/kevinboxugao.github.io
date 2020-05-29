@@ -1,10 +1,5 @@
 import React, { Suspense, useRef } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.scss";
 import createHistory from "history/createBrowserHistory";
 export const history = createHistory();
@@ -40,18 +35,16 @@ import Loading from "pages/loading";
 //function component
 function App() {
   return (
-    <Router basename="/">
-      <Suspense fallback={<Loading />}>
-        <Menu />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/work" component={Work} />
-          <Route path="/about" component={About} />
-          <Route path="/404" component={PageNotFound} />
-          <Redirect to="/404" />
-        </Switch>
-      </Suspense>
-    </Router>
+    <Suspense fallback={<Loading />}>
+      <Menu />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/work" component={Work} />
+        <Route path="/about" component={About} />
+        <Route path="/404" component={PageNotFound} />
+        <Redirect to="/404" />
+      </Switch>
+    </Suspense>
   );
 }
 

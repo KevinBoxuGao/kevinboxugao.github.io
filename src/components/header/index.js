@@ -108,7 +108,7 @@ function Header(props) {
               },
               hover: {
                 width: "auto",
-                height: "5em",
+                height: "4em",
                 viewBox: "0 0 150 70",
                 transition: { duration: 0.2 },
               },
