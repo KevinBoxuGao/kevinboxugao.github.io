@@ -61,7 +61,7 @@ function Home() {
   };
 
   return (
-    <div id="home-page" ref={headerRef}>
+    <div id="home-page" ref={headerRef} className="scroll">
       <Header handleScroll={executeScroll} />
       <div ref={layoutRef}>
         <Layout>

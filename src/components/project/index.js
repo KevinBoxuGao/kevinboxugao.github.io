@@ -75,7 +75,9 @@ function Project(props) {
         className="project-button"
         onClick={() => setToggle(!toggle)}
       >
-        <motion.img variants={imgVariants} src={props.images[0]} />
+        {props.images ? (
+          <motion.img variants={imgVariants} src={props.images[0]} />
+        ) : null}
         <motion.h3 variants={titleVariants} className="project-title">
           {props.name}
         </motion.h3>
@@ -97,9 +99,11 @@ function Project(props) {
         </motion.button>
 
         <div className="project-page_content">
-          <div className="project-display">
-            <Carousel images={props.images} />
-          </div>
+          {props.images ? (
+            <div className="project-display">
+              <Carousel images={props.images} />
+            </div>
+          ) : null}
           <div className="project-details">
             <div className="basic-info">
               <h3 className="title">{props.name}</h3>

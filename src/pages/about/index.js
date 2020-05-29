@@ -66,7 +66,7 @@ const fadeIn = {
 
 function About() {
   return (
-    <div id="about-page">
+    <div id="about-page" className="scroll">
       <Layout>
         <motion.div
           id="about"

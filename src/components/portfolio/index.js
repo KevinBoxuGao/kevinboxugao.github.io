@@ -9,76 +9,90 @@ const tech = [
   "Front-End",
   "Back-End",
   "HTML5",
-  "SASS",
-  "Reactjs",
+  "Material-UI",
+  "Bootstrap",
+  "React.js",
   "React Native",
-  "Nodejs",
-  "Javascript",
-  "Google Cloud",
-  "Firebase",
   "Python",
-  "C++",
+  "C#",
+  "REST API",
 ];
 
-const variants = {
-  enter: {
-    opacity: 0,
-  },
+const projectVariants = {
   display: {
     opacity: 1,
   },
   exit: {
-    opacity: 0,
+    opacity: 1,
   },
 };
 
+const spring = {
+  type: "spring",
+  damping: 20,
+  stiffness: 1000,
+};
+
 function Portfolio(props) {
-  const [Filter, setFilter] = useState("All");
+  const [projects, setProjects] = useState(props.projects);
+
+  const filterProjects = (filter) => {
+    setProjects(
+      shuffle(
+        props.projects.filter(function (project) {
+          if (filter == "All") {
+            return true;
+          } else {
+            return project.filters.includes(filter);
+          }
+        })
+      )
+    );
+  };
+
+  const shuffle = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
 
   return (
-    <React.Fragment>
+    <div>
       {props.withFilter ? (
         <div className="project-filter">
           {tech.map((tech) => (
-            <span key={tech} onClick={() => setFilter(tech)}>
+            <motion.span
+              whileHover={{ scale: 1.2 }}
+              key={tech}
+              onClick={() => filterProjects(tech)}
+            >
               {tech}
-            </span>
+            </motion.span>
           ))}
         </div>
       ) : null}
       <div className="projects">
         <AnimatePresence>
-          {props.projects
-            .filter(function (project) {
-              if (Filter == "All") {
-                return true;
-              } else {
-                return project.filters.includes(Filter);
-              }
-            })
-            .map((project, index) => (
-              <motion.div
-                initial="enter"
-                animate="display"
-                exit="exit"
-                variants={variants}
-                className="project_item"
-                key={index}
-              >
-                <Project
-                  name={project.name}
-                  description={project.description}
-                  site={project.site}
-                  github={project.github}
-                  devpost={project.devpost}
-                  images={project.images}
-                  tech={project.tech}
-                />
-              </motion.div>
-            ))}
+          {projects.map((project, index) => (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="project_item"
+              key={index}
+            >
+              <Project
+                name={project.name}
+                description={project.description}
+                site={project.site}
+                github={project.github}
+                devpost={project.devpost}
+                images={project.images}
+                tech={project.tech}
+              />
+            </motion.div>
+          ))}
         </AnimatePresence>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

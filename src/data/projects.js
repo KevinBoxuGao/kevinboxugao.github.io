@@ -27,6 +27,23 @@ import OcularAid1 from "../assets/portfolio/OcularAid/gallery1.jpg";
 import OcularAid2 from "../assets/portfolio/OcularAid/gallery2.jpg";
 import OcularAid3 from "../assets/portfolio/OcularAid/gallery3.jpg";
 
+import FraudSense from "../assets/portfolio/FraudSense/1.png";
+
+import GenerationOfElectricity1 from "../assets/portfolio/GenerationOfElectricity/1.png";
+import GenerationOfElectricity2 from "../assets/portfolio/GenerationOfElectricity/2.png";
+import GenerationOfElectricity3 from "../assets/portfolio/GenerationOfElectricity/3.png";
+
+import BlockTalk from "../assets/portfolio/BlockTalk/1.jpg";
+
+import TheCamera1 from "../assets/portfolio/TheCamera/1.png";
+import TheCamera2 from "../assets/portfolio/TheCamera/2.png";
+import TheCamera3 from "../assets/portfolio/TheCamera/3.png";
+
+import cs11 from "../assets/portfolio/ICS3UI/title.png";
+import cs1 from "../assets/portfolio/ICS3UI/1.png";
+import cs2 from "../assets/portfolio/ICS3UI/2.png";
+import cs3 from "../assets/portfolio/ICS3UI/3.png";
+
 const Projects = [
   {
     name: "AcreageContour",
@@ -41,8 +58,8 @@ const Projects = [
       AcreageContour3,
       AcreageContour4,
     ],
-    filters: [],
-    tech: ["React.js", "Material-UI", "Javascript", "Python"],
+    filters: ["React.js", "Material-UI", "REST API", "Front-End"],
+    tech: ["React.js", "Material-UI", "Javascript", "Python", "Flask"],
     featured: true,
   },
   {
@@ -53,8 +70,8 @@ const Projects = [
     devpost: "https://devpost.com/software/ocular-aid-kwld3t",
     site: null,
     images: [OcularAid1, OcularAid2, OcularAid3],
-    filters: [],
-    tech: ["C#", ".Net", "WPF", "Python"],
+    filters: ["C#", "Python"],
+    tech: ["C#", ".Net", "WPF", "Python", "Flask", "Front-End"],
     featured: false,
   },
   {
@@ -65,8 +82,62 @@ const Projects = [
     devpost: "https://devpost.com/software/twice4life",
     site: "https://twice4life.online/",
     images: [Twice4Life2, Twice4Life1, Twice4Life3],
-    filters: [],
-    tech: ["React.js", "Bootstrap", "Javascript", "Python"],
+    filters: ["React.js", "Bootstrap", "REST API"],
+    tech: [
+      "React.js",
+      "Bootstrap",
+      "Javascript",
+      "Python",
+      "Flask",
+      "Front-End",
+    ],
+    featured: false,
+  },
+  {
+    name: "FraudSense",
+    description:
+      "A mobile app that shows a Relational Neural Network powered algorithm which detects transaction fraud.",
+    github: "https://github.com/KevinBoxuGao/FraudSense",
+    devpost: "https://devpost.com/software/fraudsense",
+    site: null,
+    images: [FraudSense],
+    filters: ["React Native", "Bootstrap", "REST API", "Front-End"],
+    tech: [
+      "React Native",
+      "Bootstrap",
+      "Javascript",
+      "Node.js",
+      "Python",
+      "Flask",
+    ],
+    featured: false,
+  },
+  {
+    name: "Generation of Electricity",
+    description:
+      "Website teaching how electricity is generated to incoming physics students in a generalized manner.",
+    github: "https://github.com/KevinBoxuGao/Generation-of-Electricity",
+    devpost: null,
+    site: "https://kevinboxugao.github.io/Generation-of-Electricity/",
+    images: [
+      GenerationOfElectricity1,
+      GenerationOfElectricity2,
+      GenerationOfElectricity3,
+    ],
+    filters: ["React.js", "Bootstrap", "Front-End"],
+    tech: ["React.js", "Bootstrap", "Javascript", "JQuery"],
+    featured: true,
+  },
+  {
+    name: "BlockTalk",
+    description:
+      "A decentralized messaging web app powered by the ethereum blockchain",
+    github: "https://github.com/KevinBoxuGao/BlockTalk",
+    devpost: "https://devpost.com/software/blocktalk-qns93j",
+    site: null,
+    images: [BlockTalk],
+    filters: ["React.js", "Bootstrap", "Front-End"],
+    tech: ["React.js", "Bootstrap", "Javascript", "Node.js"],
     featured: false,
   },
   {
@@ -77,7 +148,7 @@ const Projects = [
     devpost: "https://devpost.com/software/sock-match",
     site: "https://expo.io/@kevinboxugao/SockMatch",
     images: [SockMatch1, SockMatch2, SockMatch4],
-    filters: [],
+    filters: ["React Native", "REST API", "Front-End"],
     tech: ["React Native", "Javascript", "Python"],
     featured: true,
   },
@@ -88,7 +159,7 @@ const Projects = [
     devpost: null,
     site: "https://kevinboxugao.github.io/Calculator/",
     images: [ReactCalculator1],
-    filters: [],
+    filters: ["React.js", "Front-End"],
     tech: ["React.js", "Javascript"],
     featured: true,
   },
@@ -100,9 +171,32 @@ const Projects = [
     devpost: "https://devpost.com/software/green-route",
     site: "https://green-route.appspot.com/",
     images: [GreenRoute1, GreenRoute2, GreenRoute3],
-    filters: [],
+    filters: ["HTML5", "Bootstrap", "REST API", "Front-End"],
     tech: ["HTML5", "Bootstrap", "JQuery", "Javascript", "Python", "Flask"],
     featured: true,
+  },
+  {
+    name: "ICS3UI",
+    description:
+      "Projects for the Grade 11 Canadian Computer Science Course at SJAM",
+    github: "https://github.com/KevinBoxuGao/ICS3UI",
+    devpost: null,
+    side: null,
+    images: [cs11, cs1, cs2, cs3],
+    filters: ["Python"],
+    tech: ["Python", "Tkinter"],
+    featured: false,
+  },
+  {
+    name: "History of The Camera",
+    description: "My grade 10 physics project, a website all about the camera",
+    github: "https://github.com/KevinBoxuGao/Physics-Project",
+    devpost: null,
+    side: "https://kevinboxugao.github.io/Physics-Project/",
+    images: [TheCamera1, TheCamera2, TheCamera3],
+    filters: ["HTML5", "Bootstrap", "Front-End"],
+    tech: ["HTML5", "SASS", "Bootstrap", "Javascript", "JQuery"],
+    featured: false,
   },
   {
     name: "Orderly Lifestyle",
@@ -111,8 +205,16 @@ const Projects = [
     devpost: null,
     site: "https://orderly-lifestyle.appspot.com",
     images: [OrderlyLifestyle1, OrderlyLifestyle2],
-    filters: [],
-    tech: ["HTML5", "Python", "Firebase", "Flask"],
+    filters: ["HTML5", "REST API", "Front-End", "Back-End"],
+    tech: [
+      "HTML5",
+      "SASS",
+      "Javscript",
+      "JQuery",
+      "Python",
+      "Firebase",
+      "Flask",
+    ],
     featured: true,
   },
   {
@@ -122,9 +224,9 @@ const Projects = [
     devpost: "https://devpost.com/software/spent",
     site: "https://spentweb.appspot.com",
     images: [SpentWeb1, SpentWeb2],
-    filters: [],
-    tech: ["HTML5", "Python", "Firebase", "Flask"],
-    featured: true,
+    filters: ["HTML5", "REST API", "Front-End"],
+    tech: ["HTML5", "SASS", "Python", "Firebase", "Flask"],
+    featured: false,
   },
 ];
 
