@@ -41,14 +41,14 @@ const titleItem = {
 const buttonContainer = {
   display: {
     opacity: 1,
-    transition: { staggerChildren: 0.5, delay: 0.5 },
+    transition: { staggerChildren: 0.3 },
   },
   hidden: {
     opacity: 0,
-    transition: { staggerChildren: 0.5, delay: 0.5 },
+    transition: { staggerChildren: 0.3 },
   },
   hover: {
-    transition: { staggerChildren: 0.5, delay: 0.5 },
+    transition: { staggerChildren: 0.3 },
   },
 };
 
@@ -84,6 +84,7 @@ function Header(props) {
         </motion.p>
       </motion.div>
       <motion.div
+        style={{ width: "10em" }}
         className="button_container"
         whileHover="hover"
         variants={buttonContainer}
@@ -96,19 +97,20 @@ function Header(props) {
           <motion.svg
             variants={{
               hidden: {
-                width: "150",
-                height: "70",
+                width: "auto",
+                height: "2em",
                 viewBox: "0 0 150 70",
               },
               display: {
-                width: "150",
-                height: "70",
+                width: "auto",
+                height: "2.5em",
                 viewBox: "0 0 150 70",
               },
               hover: {
-                width: "150",
-                height: "70",
-                viewBox: "0 0 90 120",
+                width: "auto",
+                height: "5em",
+                viewBox: "0 0 150 70",
+                transition: { duration: 0.2 },
               },
             }}
           >
@@ -118,16 +120,19 @@ function Header(props) {
                   d: "M144.926 2L75 67.2642L5.07404 2H75L144.926 2Z",
                   stroke: "white",
                   strokeWidth: "4",
+                  pathLength: 0,
                 },
                 display: {
                   d: "M144.926 2L75 67.2642L5.07404 2H75L144.926 2Z",
                   stroke: "white",
                   strokeWidth: "4",
+                  pathLength: 1,
                 },
                 hover: {
                   d: "M144.926 2L75 67.2642L5.07404 2H75L144.926 2Z",
                   stroke: "white",
                   strokeWidth: "4",
+                  pathLength: 1,
                 },
               }}
             />
