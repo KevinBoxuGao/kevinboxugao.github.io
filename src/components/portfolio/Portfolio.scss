@@ -1,0 +1,53 @@
+.projects {
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project_item {
+  background: #000000;
+  width: calc(1 / 3 * 100% - 4px);
+  margin: 2px;
+}
+.project_item:hover {
+  cursor: pointer;
+}
+
+/*change font size on resize*/
+@media (max-width: 992px) {
+  .projects {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .projects {
+    font-size: 0.75rem;
+  }
+  .project_item {
+    width: calc(1 / 2 * 100% - 4px);
+  }
+}
+
+.project-filter {
+  display: flex;
+  margin: 1em 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  span {
+    padding: 0.5em;
+    border: 2px solid #6d6d6d;
+    background-color: #424242;
+    margin: 0.3em;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 555px) {
+  .projects {
+    font-size: 0.5rem;
+  }
+  .project_item {
+    width: 100%;
+  }
+}

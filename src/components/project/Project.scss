@@ -1,0 +1,170 @@
+.project {
+  background-color: #000000;
+  .additional-links {
+    text-align: left;
+    .github-button {
+      display: inline-block;
+      color: white;
+      padding: 0.5em;
+      background: #000000;
+      margin-right: 1em;
+    }
+    .devpost-button {
+      display: inline-block;
+      color: white;
+      padding: 0.5em;
+      background: #154c75;
+    }
+  }
+}
+
+.project-button {
+  width: 100%;
+  padding-top: 56.25%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  img {
+    top: 0;
+    left: 0;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.project-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5em;
+}
+
+.project-page {
+  &:hover {
+    cursor: default;
+  }
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #282828;
+  z-index: 5;
+  color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .exit-button {
+    &:hover {
+      cursor: pointer;
+    }
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    svg {
+      height: 2em;
+      width: auto;
+    }
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0.2em;
+  }
+  .description {
+    font-size: 1.25rem;
+    margin-bottom: 1em;
+  }
+  .site-button {
+    background: #005ecd;
+    color: white;
+    font-size: 1.25rem;
+    padding: 0.5em;
+    display: inline-block;
+  }
+
+  .main-image {
+    height: auto;
+    width: 25em;
+  }
+
+  .image-carousel {
+    .right-arrow {
+      transform: rotate(180deg);
+    }
+    .images-child {
+      width: 5em;
+      height: auto;
+    }
+  }
+}
+
+.project-page_content {
+  padding: 5em;
+  display: flex;
+}
+
+.project-display {
+  display: inline-block;
+  flex: 3;
+  margin: 1em;
+}
+
+.project-details {
+  margin: 1em;
+  flex: 2;
+  display: inline-block;
+  .basic-info {
+    margin-bottom: 1em;
+    text-align: left;
+  }
+}
+
+.project_tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em 0;
+  span {
+    padding: 0.5em;
+    border: 2px solid #6d6d6d;
+    background-color: #424242;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-page_content {
+    flex-direction: column;
+  }
+  .project-display {
+    flex: 1;
+  }
+  .project-details {
+    flex: 1;
+    .basic-info,
+    .additional-links {
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+  .project_tech-stack {
+    justify-content: center;
+    span {
+      margin: 0.2em;
+      font-size: 1rem;
+    }
+  }
+}
+@media (max-width: 555px) {
+  .project-title {
+    font-size: 4em;
+  }
+}

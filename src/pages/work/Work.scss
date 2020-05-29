@@ -1,0 +1,55 @@
+.work-title {
+  text-align: center;
+  margin-bottom: 0.3em;
+  font-size: 4rem;
+}
+
+#work-page {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+
+  /*links*/
+  /*other link*/
+  .links {
+    width: 100%;
+    display: flex;
+    font-size: 2em;
+    font-weight: 700;
+  }
+  .links > a {
+    color: white;
+  }
+  .links p {
+    margin: 2px;
+    padding: 0.5em 1em;
+  }
+
+  .github-link {
+    flex: 1;
+    margin: 2px;
+    background: black;
+  }
+  .github-link:hover {
+    cursor: pointer;
+  }
+
+  .devpost-link {
+    flex: 1;
+    margin: 2px;
+    background: #154c75;
+  }
+  .devpost-link:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 555px) {
+  .github-link,
+  .devpost-link {
+    flex-basis: 100%;
+  }
+  .links {
+    flex-direction: column;
+  }
+}
