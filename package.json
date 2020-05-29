@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production --config webpack.prod.config.js && webpack --mode production --config webpack.server.config.js",
-    "start": "webpack-dev-server --open --env.ENVIRONMENT=development --config webpack.dev.config.js --watch --watch-poll"
+    "start": "webpack-dev-server --open --env.ENVIRONMENT=development --config webpack.dev.config.js --watch --watch-poll",
+    "server": "node ./dist/server.js"
   },
   "jest": {
     "transform": {
@@ -46,6 +47,7 @@
     "eslint-plugin-jest": "^23.0.3",
     "eslint-plugin-react": "^7.14.2",
     "file-loader": "^4.0.0",
+    "gh-pages": "^2.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.9.0",
@@ -68,6 +70,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "framer-motion": "^1.10.3",
     "react": "^16.13.1",
     "react-dom": "^16.5.2",

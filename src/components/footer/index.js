@@ -47,7 +47,7 @@ function Footer(props) {
           >
             <Logo
               width="8em"
-              height="auto"
+              height="8em"
               viewBox="0 0 150 150"
               className="footer_logo"
               onClick={props.scrollTop}
