@@ -40,7 +40,7 @@ import Loading from "pages/loading";
 //function component
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Suspense fallback={<Loading />}>
         <Menu />
         <Switch>
