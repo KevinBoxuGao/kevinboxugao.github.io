@@ -111,11 +111,20 @@ module.exports = {
         ],
       },
       {
-        test: /\.(pdf|png|jp(e*)g|gif)$/,
+        test: /\.(png|jp(e*)g|gif)$/,
         use: [
           {
             loader: "file-loader",
             options: { name: "[path][name].[ext]" },
+          },
+        ],
+      },
+      {
+        test: /\.(pdf)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: { name: "[name].[ext]" },
           },
         ],
       },
