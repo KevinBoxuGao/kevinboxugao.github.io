@@ -1,0 +1,81 @@
+.menu {
+  font-size: 1rem;
+}
+
+//change font size on resize
+@media (max-width: 992px) {
+  .menu,
+  .menu_button {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .menu,
+  .menu_button {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 555px) {
+  .menu,
+  .menu_button {
+    font-size: 0.6rem;
+  }
+}
+
+//menu
+.menu_page {
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  text-align: center;
+  overflow-y: auto;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: black;
+  font-size: 6em;
+  z-index: 2;
+
+  .menu_links {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  li {
+    position: relative;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0.2em;
+    text-align: center;
+    .menu_link {
+      color: white;
+      display: inline-block;
+      padding: 0;
+      display: inline;
+      text-decoration: none;
+      position: relative;
+    }
+  }
+}
+
+.menu_link:after {
+  content: "";
+  position: absolute;
+  height: 0.15em;
+  bottom: -15px;
+  left: 0;
+  display: block;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+.menu_link:hover:after {
+  visibility: visible;
+  transform: scaleX(1);
+  width: 100%;
+}
+.menu_link:hover {
+  cursor: pointer;
+}
