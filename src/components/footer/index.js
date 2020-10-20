@@ -92,7 +92,13 @@ function Footer(props) {
                 <h3>Contact</h3>
                 <ul>
                   <li>
-                    <p>kevingao2003@gmail.com</p>
+                    <motion.a
+                      whileHover="hover"
+                      variants={linkVariants}
+                      href="mailto:kevingao2003@gmail.com"
+                    >
+                      kevingao2003@gmail.com
+                    </motion.a>
                   </li>
                   <li>
                     <p>206-336-1746</p>

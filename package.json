@@ -1,9 +1,12 @@
 {
   "name": "KevinBoxuGao",
+  "private": true,
   "version": "1.0.0",
   "description": "Portfolio website",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "webpack --mode production --config webpack.prod.config.js && webpack --mode production --config webpack.server.config.js",
     "start": "webpack-dev-server --open --env.ENVIRONMENT=development --config webpack.dev.config.js --watch --watch-poll",
     "server": "node ./dist/server.js"
