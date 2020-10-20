@@ -1,3 +1,4 @@
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require("path");
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -5,18 +6,19 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const pages = ["index"];
-const htmlPlugins = pages.map((pageName) => {
-  return new HtmlWebpackPlugin({
+
+const htmlPlugins = [
+  new HtmlWebpackPlugin({
     hash: true,
-    title: pageName,
+    title: 'index',
     template: "./public/index.html",
-    chunks: [pageName, "vendor"],
-    filename: pageName + ".html",
+    chunks: ['index', "vendor"],
+    filename: 'index' + ".html",
     excludeChunks: ["server"],
     favicon: "./public/favicon.ico",
-  });
-});
+  }), 
+]
+
 
 module.exports = {
   entry: {
@@ -43,6 +45,9 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
+    new CopyPlugin({patterns: [
+      { from: './public/404.html', to: './404.html' }
+    ]}),
     ...htmlPlugins,
   ],
 
