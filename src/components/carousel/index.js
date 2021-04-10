@@ -23,9 +23,9 @@ const variants = {
   }),
 };
 
-function Carousel(props) {
+function Carousel({ images }) {
   const [[image, direction], setScroll] = useState([0, 0]);
-  const imageIndex = wrap(0, props.images.length, image);
+  const imageIndex = wrap(0, images.length, image);
 
   const scrollSelect = (index) => {
     console.log(index);
@@ -52,7 +52,8 @@ function Carousel(props) {
               x: { type: "spring", stiffness: 300, damping: 200 },
               opacity: { duration: 0.2 },
             }}
-            src={props.images[imageIndex]}
+            src={images[imageIndex]}
+            alt={imageIndex + " image of project"}
           />
         </AnimatePresence>
         <Arrow
@@ -60,18 +61,16 @@ function Carousel(props) {
           className="next"
           onClick={() => scroll(1)}
           height="20%"
-          width="100%"
         />
         <Arrow
           viewBox="0 0 48 105"
           className="prev"
           onClick={() => scroll(-1)}
           height="20%"
-          width="100%"
         />
       </div>
       <div className="image-control">
-        {props.images.map((image, index) => (
+        {images.map((image, index) => (
           <span
             className={"dot " + (imageIndex == index ? "active" : "")}
             key={index}

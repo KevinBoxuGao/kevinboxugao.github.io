@@ -18,21 +18,6 @@ const tech = [
   "REST API",
 ];
 
-const projectVariants = {
-  display: {
-    opacity: 1,
-  },
-  exit: {
-    opacity: 1,
-  },
-};
-
-const spring = {
-  type: "spring",
-  damping: 20,
-  stiffness: 1000,
-};
-
 function Portfolio(props) {
   const [projects, setProjects] = useState(props.projects);
 

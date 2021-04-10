@@ -76,11 +76,15 @@ function Project(props) {
         onClick={() => setToggle(!toggle)}
       >
         {props.images ? (
-          <motion.img variants={imgVariants} src={props.images[0]} />
+          <motion.img
+            variants={imgVariants}
+            src={props.images[0]}
+            alt={"clickable picture of " + props.description}
+          />
         ) : null}
-        <motion.h3 variants={titleVariants} className="project-title">
+        <motion.h1 variants={titleVariants} className="project-title">
           {props.name}
-        </motion.h3>
+        </motion.h1>
       </motion.div>
       <motion.div
         initial={toggle ? "visible" : "hidden"}
@@ -92,6 +96,7 @@ function Project(props) {
           initial={"default"}
           whileHover="hover"
           variants={exitButtonVariants}
+          aria-label="button to exit project overlay"
           className="exit-button"
           onClick={() => setToggle(!toggle)}
         >
@@ -106,7 +111,7 @@ function Project(props) {
           ) : null}
           <div className="project-details">
             <div className="basic-info">
-              <h3 className="title">{props.name}</h3>
+              <h1 className="title">{props.name}</h1>
               <p className="description">{props.description}</p>
               {props.site != null ? (
                 <motion.a

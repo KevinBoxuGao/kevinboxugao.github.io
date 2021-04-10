@@ -19,6 +19,7 @@ function Toggle(props) {
   return (
     <motion.button
       className="menu_button"
+      aria-label="menu hamburger button"
       variants={buttonVariants}
       intial="default"
       whileHover="hover"

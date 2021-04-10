@@ -56,9 +56,9 @@ function Footer(props) {
             />
             <div className="footer_links">
               <div className="link_group">
-                <Link to="/work">
+                <a href="/work">
                   <h3 style={{ color: "black" }}>Work</h3>
-                </Link>
+                </a>
                 <ul>
                   <li>
                     <motion.a

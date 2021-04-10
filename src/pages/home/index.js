@@ -20,24 +20,7 @@ const layoutVariants = {
   },
 };
 
-const linkVariants = {
-  default: {
-    opacity: 0.5,
-    transition: { duration: 0.5 },
-  },
-  hover: {
-    opacity: 1,
-    transition: { duration: 0.5 },
-  },
-};
-
 function Home() {
-  const [State, setState] = useState({
-    vis1: false,
-    vis2: false,
-    vis3: false,
-  });
-
   const [vis1, setVis1] = useState(false);
   const [vis2, setVis2] = useState(false);
   const [vis3, setVis3] = useState(false);
@@ -126,8 +109,8 @@ function Home() {
                     },
                   }}
                 >
-                  <Link to="/work">
-                    <p className="more-link">More</p>
+                  <Link aria-label="link to more projects" to="/work">
+                    <p className="more-link">More Projects</p>
                   </Link>
                 </motion.div>
                 <div className="links">

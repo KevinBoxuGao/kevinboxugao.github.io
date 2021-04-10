@@ -4,6 +4,7 @@ import Projects from "data/projects.js";
 import Layout from "components/layout";
 import "./Work.scss";
 import { motion } from "framer-motion";
+import Links from "data/links";
 
 const containerVariants = {
   hidden: {
@@ -77,7 +78,7 @@ function Work() {
                   transition: { duration: 0.3 },
                 },
               }}
-              href="https://github.com/KevinBoxuGao"
+              href={Links.github}
               className="github-link"
             >
               <p>More on Github</p>
@@ -97,7 +98,7 @@ function Work() {
                   transition: { duration: 0.3 },
                 },
               }}
-              href="https://devpost.com/KevinBoxuGao"
+              href={Links.devpost}
               className="devpost-link"
             >
               <p>Devpost</p>
