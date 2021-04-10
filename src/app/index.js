@@ -1,8 +1,6 @@
 import React, { Suspense, useRef } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.scss";
-import createHistory from "history/createBrowserHistory";
-export const history = createHistory();
 
 //pages
 const Home = React.lazy(() => {

@@ -97,17 +97,17 @@ function Header(props) {
           <motion.svg
             variants={{
               hidden: {
-                width: "auto",
+                width: "100%",
                 height: "2em",
                 viewBox: "0 0 150 70",
               },
               display: {
-                width: "auto",
+                width: "100%",
                 height: "2.5em",
                 viewBox: "0 0 150 70",
               },
               hover: {
-                width: "auto",
+                width: "100%",
                 height: "4em",
                 viewBox: "0 0 150 70",
                 transition: { duration: 0.2 },

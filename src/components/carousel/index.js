@@ -60,12 +60,14 @@ function Carousel(props) {
           className="next"
           onClick={() => scroll(1)}
           height="20%"
+          width="100%"
         />
         <Arrow
           viewBox="0 0 48 105"
           className="prev"
           onClick={() => scroll(-1)}
           height="20%"
+          width="100%"
         />
       </div>
       <div className="image-control">

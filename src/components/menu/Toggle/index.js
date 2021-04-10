@@ -24,7 +24,7 @@ function Toggle(props) {
       whileHover="hover"
       onClick={props.toggle}
     >
-      <svg width="3em" viewBox="0 0 20 20">
+      <svg width="3em" height="100%" viewBox="0 0 20 20">
         <Path
           variants={{
             closed: { d: "M 2 2.5 L 20 2.5" },
