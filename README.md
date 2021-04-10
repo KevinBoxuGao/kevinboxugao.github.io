@@ -1,2 +1,3 @@
 # kevinboxugao.github.io
-My Personal Website 
+
+My Personal Portfolio Website showcasing my projects and qualifications
