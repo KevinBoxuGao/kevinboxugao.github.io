@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "assets/icons/logo.svg";
 import VisibilitySensor from "react-visibility-sensor";
+import Links from "data/Links";
 import Pdf from "assets/KevinGaoResume.pdf";
 import "./Footer.scss";
 
@@ -63,7 +64,9 @@ function Footer(props) {
                     <motion.a
                       whileHover="hover"
                       variants={linkVariants}
-                      href="https://github.com/KevinBoxuGao"
+                      href={Links.github}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Github
                     </motion.a>
@@ -73,6 +76,8 @@ function Footer(props) {
                       whileHover="hover"
                       variants={linkVariants}
                       href={Pdf}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Resume
                     </motion.a>
@@ -81,7 +86,9 @@ function Footer(props) {
                     <motion.a
                       whileHover="hover"
                       variants={linkVariants}
-                      href="https://devpost.com/KevinBoxuGao"
+                      href={Links.devpost}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Devpost
                     </motion.a>
@@ -96,6 +103,8 @@ function Footer(props) {
                       whileHover="hover"
                       variants={linkVariants}
                       href="mailto:kevingao2003@gmail.com"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       kevingao2003@gmail.com
                     </motion.a>
@@ -107,7 +116,9 @@ function Footer(props) {
                     <motion.a
                       whileHover="hover"
                       variants={linkVariants}
-                      href="https://www.linkedin.com/in/kevin-gao-1b8777186/"
+                      href={Links.linkedin}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Linkedin
                     </motion.a>
@@ -121,7 +132,9 @@ function Footer(props) {
                     <motion.a
                       whileHover="hover"
                       variants={linkVariants}
-                      href="https://www.facebook.com/"
+                      href={Links.facebook}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Facebook
                     </motion.a>
@@ -130,7 +143,7 @@ function Footer(props) {
                     <motion.a
                       whileHover="hover"
                       variants={linkVariants}
-                      href="https://twitter.com/Kevin_Boxu_Gao"
+                      href={Links.twitter}
                     >
                       Twitter
                     </motion.a>
@@ -139,7 +152,9 @@ function Footer(props) {
                     <motion.a
                       whileHover="hover"
                       variants={linkVariants}
-                      href="https://www.instagram.com/kevin___gao/"
+                      href={Links.instagram}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Instagram
                     </motion.a>

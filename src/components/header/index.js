@@ -90,7 +90,7 @@ function Header(props) {
         variants={buttonContainer}
         onClick={props.handleScroll}
       >
-        <a className="continue-button">
+        <button className="continue-button">
           <motion.p variants={buttonVariants} className="button_label">
             Portfolio
           </motion.p>
@@ -137,7 +137,7 @@ function Header(props) {
               }}
             />
           </motion.svg>
-        </a>
+        </button>
       </motion.div>
     </motion.div>
   );
