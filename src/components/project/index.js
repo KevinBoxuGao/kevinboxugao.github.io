@@ -7,7 +7,7 @@ import "./Project.scss";
 
 const imgVariants = {
   default: {
-    opacity: 0.8,
+    opacity: 0.95,
     transition: { duration: 0.3 },
   },
   hover: {

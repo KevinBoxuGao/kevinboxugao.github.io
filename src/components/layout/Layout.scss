@@ -1,16 +1,21 @@
 .layout {
   font-size: 1rem;
-  padding: 2em 4em 0em 4em;
+  margin: 4em 4em 0 4em;
+  padding: 2em;
   overflow: hidden;
+  border-radius: 4em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .section-title {
-  font-size: 4em;
-  margin: 0;
-}
-.section-description {
   font-size: 3em;
   margin: 0;
+  text-align: center;
+}
+.section-description {
+  font-size: 1.5em;
+  margin: 0;
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
 /*change font size on resize*/

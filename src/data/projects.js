@@ -44,7 +44,52 @@ import cs1 from "../assets/portfolio/ICS3UI/1.png";
 import cs2 from "../assets/portfolio/ICS3UI/2.png";
 import cs3 from "../assets/portfolio/ICS3UI/3.png";
 
+import JAMHacks from "../assets/portfolio/JAMHacks/1.png";
+import Cheapreats from "../assets/portfolio/Cheapreats/1.png";
+
 const Projects = [
+  {
+    name: "JAMHacks",
+    description:
+      "I headed development and design for the 2021 JAMHacks home page",
+    github: "https://github.com/sjamcsclub/jamhacks.ca",
+    devpost: null,
+    site: "https://jamhacks.ca/",
+    images: [JAMHacks],
+    filters: [],
+    tech: ["React.js", "Website"],
+    featured: true,
+  },
+  {
+    name: "Cheapreats",
+    description: "I headed development for the Cheapreats home page",
+    github: null,
+    devpost: null,
+    site: "https://www.cheapreats.com/",
+    images: [Cheapreats],
+    filters: [],
+    tech: ["React.js", "Gatsby", "GraphQL", "Website"],
+    featured: true,
+  },
+  {
+    name: "Orderly Lifestyle",
+    description: "A simple web app used to keep track of tasks",
+    github: "https://github.com/KevinBoxuGao/Orderly-Lifestyle",
+    devpost: null,
+    site: "https://orderly-lifestyle.appspot.com",
+    images: [OrderlyLifestyle1, OrderlyLifestyle2],
+    filters: ["HTML5", "REST API", "Front-End", "Back-End"],
+    tech: [
+      "HTML5",
+      "SASS",
+      "Javscript",
+      "JQuery",
+      "Python",
+      "Firebase",
+      "Flask",
+    ],
+    featured: true,
+  },
   {
     name: "AcreageContour",
     description:
@@ -60,7 +105,7 @@ const Projects = [
     ],
     filters: ["React.js", "Material-UI", "REST API", "Front-End"],
     tech: ["React.js", "Material-UI", "Javascript", "Python", "Flask"],
-    featured: true,
+    featured: false,
   },
   {
     name: "OcularAid",
@@ -126,7 +171,7 @@ const Projects = [
     ],
     filters: ["React.js", "Bootstrap", "Front-End"],
     tech: ["React.js", "Bootstrap", "Javascript", "JQuery"],
-    featured: true,
+    featured: false,
   },
   {
     name: "BlockTalk",
@@ -150,7 +195,7 @@ const Projects = [
     images: [SockMatch1, SockMatch2, SockMatch4],
     filters: ["React Native", "REST API", "Front-End"],
     tech: ["React Native", "Javascript", "Python"],
-    featured: true,
+    featured: false,
   },
   {
     name: "React Calculator",
@@ -161,7 +206,7 @@ const Projects = [
     images: [ReactCalculator1],
     filters: ["React.js", "Front-End"],
     tech: ["React.js", "Javascript"],
-    featured: true,
+    featured: false,
   },
   {
     name: "Green Route",
@@ -197,25 +242,6 @@ const Projects = [
     filters: ["HTML5", "Bootstrap", "Front-End"],
     tech: ["HTML5", "SASS", "Bootstrap", "Javascript", "JQuery"],
     featured: false,
-  },
-  {
-    name: "Orderly Lifestyle",
-    description: "A simple web app used to keep track of tasks",
-    github: "https://github.com/KevinBoxuGao/Orderly-Lifestyle",
-    devpost: null,
-    site: "https://orderly-lifestyle.appspot.com",
-    images: [OrderlyLifestyle1, OrderlyLifestyle2],
-    filters: ["HTML5", "REST API", "Front-End", "Back-End"],
-    tech: [
-      "HTML5",
-      "SASS",
-      "Javscript",
-      "JQuery",
-      "Python",
-      "Firebase",
-      "Flask",
-    ],
-    featured: true,
   },
   {
     name: "SpentWeb",

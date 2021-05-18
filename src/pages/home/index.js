@@ -35,16 +35,17 @@ function Home() {
     setVis3(isActive);
   };
   const layoutRef = useRef();
+  const topRef = useRef();
   const executeScroll = () => {
     layoutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  const headerRef = useRef();
   const scrollTop = () => {
-    headerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    topRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <div id="home-page" ref={headerRef} className="scroll">
+    <div id="home-page" className="scroll">
+      <span ref={topRef} />
       <Header handleScroll={executeScroll} />
       <div ref={layoutRef}>
         <Layout>
@@ -61,9 +62,7 @@ function Home() {
                 variants={layoutVariants}
               >
                 <h1 className="section-title">Work</h1>
-                <p className="section-description">
-                  Personal programs, hackathon projects and much more
-                </p>
+                <p className="section-description">Featured Work</p>
               </motion.div>
             )}
           </VisibilitySensor>
@@ -95,26 +94,8 @@ function Home() {
                 animate={isVisible ? "visible" : "hidden"}
                 variants={layoutVariants}
               >
-                <motion.div
-                  initial={"default"}
-                  whileHover="hover"
-                  variants={{
-                    default: {
-                      background: "#005ECD",
-                      transition: { duration: 0.3 },
-                    },
-                    hover: {
-                      background: "#00369b",
-                      transition: { duration: 0.3 },
-                    },
-                  }}
-                >
-                  <Link aria-label="link to more projects" to="/work">
-                    <p className="more-link">More Projects</p>
-                  </Link>
-                </motion.div>
                 <div className="links">
-                  <motion.a
+                  <motion.div
                     initial={"default"}
                     whileHover="hover"
                     variants={{
@@ -129,31 +110,33 @@ function Home() {
                         transition: { duration: 0.3 },
                       },
                     }}
-                    href="https://github.com/KevinBoxuGao"
-                    className="github-link"
+                    className="page-link"
                   >
-                    <p>More on Github</p>
-                  </motion.a>
-                  <motion.a
+                    <Link aria-label="link to more projects" to="/work">
+                      <p className="more-link">More Projects</p>
+                    </Link>
+                  </motion.div>
+                  <motion.div
                     initial={"default"}
                     whileHover="hover"
                     variants={{
                       default: {
-                        backgroundColor: "#154c75",
+                        backgroundColor: "#005ecd",
                         color: "#FFFFFF",
                         transition: { duration: 0.3 },
                       },
                       hover: {
-                        backgroundColor: "#4c78a4",
+                        backgroundColor: "#00369b",
                         color: "#cccccc",
                         transition: { duration: 0.3 },
                       },
                     }}
-                    href="https://devpost.com/KevinBoxuGao"
-                    className="devpost-link"
+                    className="page-link"
                   >
-                    <p>Devpost</p>
-                  </motion.a>
+                    <Link aria-label="link to about page" to="/about">
+                      <p className="more-link">About</p>
+                    </Link>
+                  </motion.div>
                 </div>
               </motion.div>
             )}
