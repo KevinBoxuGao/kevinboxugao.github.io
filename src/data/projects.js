@@ -105,7 +105,7 @@ const Projects = [
     ],
     filters: ["React.js", "Material-UI", "REST API", "Front-End"],
     tech: ["React.js", "Material-UI", "Javascript", "Python", "Flask"],
-    featured: false,
+    featured: true,
   },
   {
     name: "OcularAid",
@@ -195,7 +195,7 @@ const Projects = [
     images: [SockMatch1, SockMatch2, SockMatch4],
     filters: ["React Native", "REST API", "Front-End"],
     tech: ["React Native", "Javascript", "Python"],
-    featured: false,
+    featured: true,
   },
   {
     name: "React Calculator",
